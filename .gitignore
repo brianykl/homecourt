@@ -31,6 +31,7 @@ homecourt-web/yarn-error.log*
 
 # env files (can opt-in for commiting if needed)
 homecourt-web/.env*
+homecourt-api/.env*
 
 # vercel
 homecourt-web/.vercel
