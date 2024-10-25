@@ -1,0 +1,40 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+homecourt-web/node_modules
+homecourt-web/.pnp
+homecourt-web/.pnp.*
+homecourt-web/.yarn/*
+homecourt-web/!.yarn/patches
+homecourt-web/!.yarn/plugins
+homecourt-web/!.yarn/releases
+homecourt-web/!.yarn/versions
+
+# testing
+homecourt-web/coverage
+
+# next.js
+homecourt-web/.next/
+homecourt-web/out/
+
+# production
+homecourt-web/build
+
+# misc
+homecourt-web/.DS_Store
+homecourt-web/*.pem
+
+# debug
+homecourt-web/npm-debug.log*
+homecourt-web/yarn-debug.log*
+homecourt-web/yarn-error.log*
+
+# env files (can opt-in for commiting if needed)
+homecourt-web/.env*
+
+# vercel
+homecourt-web/.vercel
+
+# typescript
+homecourt-web/*.tsbuildinfo
+homecourt-web/next-env.d.ts
