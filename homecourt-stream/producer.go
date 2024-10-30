@@ -3,10 +3,12 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"io"
 	"log"
+	"net/http"
 	"time"
 
-	ampq "github.com/rabbitmq/amqp091-go"
+	amqp "github.com/rabbitmq/amqp091-go"
 )
 
 // Function to handle errors
@@ -48,7 +50,7 @@ type PlayerTransfer struct {
 
 func main() {
 	// Connect to RabbitMQ
-	conn, err := ampq.Dial("amqp://guest:guest@localhost:5672/")
+	conn, err := amqp.Dial("amqp://guest:guest@localhost:5672/")
 	failOnError(err, "failed to connect to rabbitmq")
 	defer conn.Close()
 
@@ -94,90 +96,56 @@ func main() {
 		log.Printf("successfully bound queue %s to homecourt_exchange with routing key %s", queueName, queueName)
 	}
 	log.Println("homecourt_exchange and queues set up successfully")
-
-	liveTicketTicker := time.NewTicker(30 * time.Second)      // Every 30 seconds
-	oddsTicker := time.NewTicker(45 * time.Second)            // Every 45 seconds
-	playerInjuriesTicker := time.NewTicker(5 * time.Minute)   // Every 5 minutes
-	playerTransfersTicker := time.NewTicker(10 * time.Minute) // Every 10 minutes
-	defer liveTicketTicker.Stop()
-	defer oddsTicker.Stop()
-	defer playerInjuriesTicker.Stop()
-	defer playerTransfersTicker.Stop()
-
 	log.Println("producer started. waiting for tickers...")
 
-	for {
-		select {
-		case t := <-liveTicketTicker.C:
-			// Create dummy LiveTicketPrice data
-			data := LiveTicketPrice{
-				TeamID:    "team123",
-				GameID:    "game456",
-				Price:     150.00,
-				Currency:  "USD",
-				Timestamp: t.Format(time.RFC3339),
-			}
+	go handleOdds(channel)
+	log.Println("producer started. running in background...")
+	select {}
 
-			publishMessage(channel, "homecourt_exchange", "live_ticket_prices", data)
-
-		case t := <-oddsTicker.C:
-			// Create dummy Odds data
-			data := Odds{
-				GameID:    "game456",
-				Odds:      1.95,
-				Timestamp: t.Format(time.RFC3339),
-			}
-
-			publishMessage(channel, "homecourt_exchange", "odds", data)
-
-		case t := <-playerInjuriesTicker.C:
-			// Create dummy PlayerInjury data
-			data := PlayerInjury{
-				PlayerID:  "player789",
-				Status:    "Out",
-				GameID:    "game456",
-				Timestamp: t.Format(time.RFC3339),
-			}
-
-			publishMessage(channel, "homecourt_exchange", "player_injuries", data)
-
-		case t := <-playerTransfersTicker.C:
-			// Create dummy PlayerTransfer data
-			data := PlayerTransfer{
-				PlayerID:  "player321",
-				FromTeam:  "team123",
-				ToTeam:    "team456",
-				Status:    "signed",
-				Timestamp: t.Format(time.RFC3339),
-			}
-
-			publishMessage(channel, "homecourt_exchange", "player_transfers", data)
-		}
-	}
 }
 
-func publishMessage(channel *ampq.Channel, exchange, routingKey string, data interface{}) {
+func publishMessage(channel *amqp.Channel, exchange, routingKey string, data interface{}) {
 	body, err := json.Marshal(data)
-	if err != nil {
-		log.Printf("Error marshaling data for %s: %v", routingKey, err)
-		return
-	}
+	failOnError(err, fmt.Sprintf("error marshalling data for %s: %v", routingKey, err))
 
 	err = channel.Publish(
 		exchange,   // exchange
 		routingKey, // routing key
 		false,      // mandatory
 		false,      // immediate
-		ampq.Publishing{
+		amqp.Publishing{
 			ContentType:  "application/json",
 			Body:         body,
-			DeliveryMode: ampq.Persistent,
+			DeliveryMode: amqp.Persistent,
 		},
 	)
-	if err != nil {
-		log.Printf("Error publishing message to %s: %v", routingKey, err)
-		return
-	}
+	failOnError(err, fmt.Sprintf("error publishing message to %s: %v", routingKey, err))
 
 	log.Printf("Published message to %s: %s", routingKey, string(body))
+}
+
+func handleOdds(channel *amqp.Channel) {
+	ticker := time.NewTicker(6 * time.Second) // limited at 10 api calls a min
+	defer ticker.Stop()
+
+	client := &http.Client{
+		Timeout: 10 * time.Second, // Adjust the timeout as needed
+	}
+
+	for range ticker.C {
+		resp, err := client.Get("https://api.example.com/ticket_prices?team=team123")
+		if resp.StatusCode != http.StatusOK {
+			log.Printf("Unexpected status code: %d for odds API", resp.StatusCode)
+			continue
+		}
+		failOnError(err, "failed to get odds from odds blaze")
+		body, err := io.ReadAll(resp.Body)
+		failOnError(err, "cant read body from odds blaze api call")
+		resp.Body.Close()
+
+		var data Odds
+		err = json.Unmarshal(body, &data)
+		failOnError(err, "error marshalling odds")
+		publishMessage(channel, "homecourt_exchange", "odds", data)
+	}
 }
