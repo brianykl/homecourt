@@ -1,13 +1,11 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
-	"io"
+	"homecourt-stream/producers"
 	"log"
-	"net/http"
-	"time"
 
+	"github.com/joho/godotenv"
 	amqp "github.com/rabbitmq/amqp091-go"
 )
 
@@ -50,6 +48,11 @@ type PlayerTransfer struct {
 
 func main() {
 	// Connect to RabbitMQ
+	err := godotenv.Load(".env.local")
+	if err != nil {
+		log.Fatalf("err loading: %v", err)
+	}
+
 	conn, err := amqp.Dial("amqp://guest:guest@localhost:5672/")
 	failOnError(err, "failed to connect to rabbitmq")
 	defer conn.Close()
@@ -98,54 +101,8 @@ func main() {
 	log.Println("homecourt_exchange and queues set up successfully")
 	log.Println("producer started. waiting for tickers...")
 
-	go handleOdds(channel)
+	go producers.HandleOdds(channel)
 	log.Println("producer started. running in background...")
 	select {}
 
-}
-
-func publishMessage(channel *amqp.Channel, exchange, routingKey string, data interface{}) {
-	body, err := json.Marshal(data)
-	failOnError(err, fmt.Sprintf("error marshalling data for %s: %v", routingKey, err))
-
-	err = channel.Publish(
-		exchange,   // exchange
-		routingKey, // routing key
-		false,      // mandatory
-		false,      // immediate
-		amqp.Publishing{
-			ContentType:  "application/json",
-			Body:         body,
-			DeliveryMode: amqp.Persistent,
-		},
-	)
-	failOnError(err, fmt.Sprintf("error publishing message to %s: %v", routingKey, err))
-
-	log.Printf("Published message to %s: %s", routingKey, string(body))
-}
-
-func handleOdds(channel *amqp.Channel) {
-	ticker := time.NewTicker(6 * time.Second) // limited at 10 api calls a min
-	defer ticker.Stop()
-
-	client := &http.Client{
-		Timeout: 10 * time.Second, // Adjust the timeout as needed
-	}
-
-	for range ticker.C {
-		resp, err := client.Get("https://api.example.com/ticket_prices?team=team123")
-		if resp.StatusCode != http.StatusOK {
-			log.Printf("Unexpected status code: %d for odds API", resp.StatusCode)
-			continue
-		}
-		failOnError(err, "failed to get odds from odds blaze")
-		body, err := io.ReadAll(resp.Body)
-		failOnError(err, "cant read body from odds blaze api call")
-		resp.Body.Close()
-
-		var data Odds
-		err = json.Unmarshal(body, &data)
-		failOnError(err, "error marshalling odds")
-		publishMessage(channel, "homecourt_exchange", "odds", data)
-	}
 }
