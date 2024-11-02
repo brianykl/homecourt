@@ -32,6 +32,7 @@ homecourt-web/yarn-error.log*
 # env files (can opt-in for commiting if needed)
 homecourt-web/.env*
 homecourt-api/.env*
+homecourt-stream/.env*
 
 # vercel
 homecourt-web/.vercel
@@ -39,3 +40,4 @@ homecourt-web/.vercel
 # typescript
 homecourt-web/*.tsbuildinfo
 homecourt-web/next-env.d.ts
+

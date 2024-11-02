@@ -8,10 +8,13 @@ import (
 )
 
 func publishMessage(channel *amqp.Channel, exchange, routingKey string, data interface{}) {
-	body, _ := json.Marshal(data)
-	// failOnError(err, fmt.Sprintf("error marshalling data for %s: %v", routingKey, err))
+	body, err := json.Marshal(data)
+	if err != nil {
+		log.Printf("error marshalling data for %s: %v", routingKey, err)
+		return
+	}
 
-	_ = channel.Publish(
+	err = channel.Publish(
 		exchange,   // exchange
 		routingKey, // routing key
 		false,      // mandatory
@@ -22,7 +25,10 @@ func publishMessage(channel *amqp.Channel, exchange, routingKey string, data int
 			DeliveryMode: amqp.Persistent,
 		},
 	)
-	// failOnError(err, fmt.Sprintf("error publishing message to %s: %v", routingKey, err))
+	if err != nil {
+		log.Printf("error publishing message to %s: %v", routingKey, err)
+		return
+	}
 
-	log.Printf("Published message to %s: %s", routingKey, string(body))
+	log.Printf("published message to %s: %s", routingKey, string(body))
 }

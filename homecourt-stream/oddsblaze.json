@@ -1,0 +1,1892 @@
+{
+  "games": [
+    {
+      "id": "nba:atlanta_hawks:washington_wizards:2024-10-30",
+      "sport": "Basketball",
+      "league": "NBA",
+      "teams": {
+        "away": {
+          "id": "nba:atlanta_hawks",
+          "name": "Atlanta Hawks",
+          "abbreviation": "ATL"
+        },
+        "home": {
+          "id": "nba:washington_wizards",
+          "name": "Washington Wizards",
+          "abbreviation": "WSH"
+        }
+      },
+      "start": "2024-10-30T23:00:00",
+      "status": "Scheduled",
+      "live": false,
+      "tournament": "Atlanta Hawks at Washington Wizards",
+      "sportsbooks": [
+        {
+          "id": "espn_bet",
+          "name": "ESPN BET",
+          "odds": [
+            {
+              "id": "espn_bet:moneyline:atlanta_hawks:nba:atlanta_hawks:washington_wizards:2024-10-30",
+              "group": "espn_bet:moneyline:nba:atlanta_hawks:washington_wizards:2024-10-30",
+              "market": "Moneyline",
+              "name": "Atlanta Hawks",
+              "main": true,
+              "price": "-190",
+              "points": null,
+              "selection": "Away",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/10e2594b-0a24-4187-bdac-2112b6ca7857",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpZlV3amdhMkY5RENrMEszeTl5VkpJbzdkdUJ0Z1lWSTcyWjRnakM3QkJVcm8wWk1qUGVsb0lyNWVkRkVKd3ZqQmpVQVRBbmgwN29wU3dIaCtDVnJZVVFTajh5T2NPdVJML2FWcDI2N0YyWkdvRFVOWjRpUWY2ZVFZQkFUKzFiMmpnPT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            },
+            {
+              "id": "espn_bet:moneyline:washington_wizards:nba:atlanta_hawks:washington_wizards:2024-10-30",
+              "group": "espn_bet:moneyline:nba:atlanta_hawks:washington_wizards:2024-10-30",
+              "market": "Moneyline",
+              "name": "Washington Wizards",
+              "main": true,
+              "price": "+155",
+              "points": null,
+              "selection": "Home",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/10e2594b-0a24-4187-bdac-2112b6ca7857",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpZlV3amdhMkY5RENrMEszeTl5VkpJbzdkdUJ0Z1lWSTcyWjRnakM3QkJVcm8wWk1qUGVsb0lyNWVkRkVKd3ZqQmpVQVRBbmgwN29wU3dIaCtDVnJZVVE2Vzl3S1JtNkdDY0JBaXg2NkIvdFlpK2hvei9yaU1halNwSWZHeldReW13PT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nba:detroit_pistons:philadelphia_76ers:2024-10-30",
+      "sport": "Basketball",
+      "league": "NBA",
+      "teams": {
+        "away": {
+          "id": "nba:detroit_pistons",
+          "name": "Detroit Pistons",
+          "abbreviation": "DET"
+        },
+        "home": {
+          "id": "nba:philadelphia_76ers",
+          "name": "Philadelphia 76ers",
+          "abbreviation": "PHI"
+        }
+      },
+      "start": "2024-10-30T23:00:00",
+      "status": "Scheduled",
+      "live": false,
+      "tournament": "Detroit Pistons at Philadelphia 76ers",
+      "sportsbooks": [
+        {
+          "id": "espn_bet",
+          "name": "ESPN BET",
+          "odds": [
+            {
+              "id": "espn_bet:moneyline:detroit_pistons:nba:detroit_pistons:philadelphia_76ers:2024-10-30",
+              "group": "espn_bet:moneyline:nba:detroit_pistons:philadelphia_76ers:2024-10-30",
+              "market": "Moneyline",
+              "name": "Detroit Pistons",
+              "main": true,
+              "price": "+140",
+              "points": null,
+              "selection": "Away",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/5074162d-415a-4d70-a43e-70f2b2f53a73",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpVE9UeDc4Z096MWc1cjBnTlFsb2N2a0dFdHlQZmtZWjJvbTM5cG9mSlFGdC9UaTVsdnF6bUdBaDFDY256RHorQ1U1cjFkK2pTWkwvTzVSOHFpVW9NakgxWFJMKzZpZXpsSkkydkxZUzYvM1F2SzJteEIraU80N1A0Wm1YNUJ2MGtnPT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            },
+            {
+              "id": "espn_bet:moneyline:philadelphia_76ers:nba:detroit_pistons:philadelphia_76ers:2024-10-30",
+              "group": "espn_bet:moneyline:nba:detroit_pistons:philadelphia_76ers:2024-10-30",
+              "market": "Moneyline",
+              "name": "Philadelphia 76ers",
+              "main": true,
+              "price": "-170",
+              "points": null,
+              "selection": "Home",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/5074162d-415a-4d70-a43e-70f2b2f53a73",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpVE9UeDc4Z096MWc1cjBnTlFsb2N2a0dFdHlQZmtZWjJvbTM5cG9mSlFGdC9UaTVsdnF6bUdBaDFDY256RHorQ1U1cjFkK2pTWkwvTzVSOHFpVW9NakhqcEJ0L3puc3poOVRIbm1jS3hGOFF5MHQybm0vUGVwUVA4bVBJOG11cWd3PT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nba:toronto_raptors:charlotte_hornets:2024-10-30",
+      "sport": "Basketball",
+      "league": "NBA",
+      "teams": {
+        "away": {
+          "id": "nba:toronto_raptors",
+          "name": "Toronto Raptors",
+          "abbreviation": "TOR"
+        },
+        "home": {
+          "id": "nba:charlotte_hornets",
+          "name": "Charlotte Hornets",
+          "abbreviation": "CHA"
+        }
+      },
+      "start": "2024-10-30T23:00:00",
+      "status": "Scheduled",
+      "live": false,
+      "tournament": "Toronto Raptors at Charlotte Hornets",
+      "sportsbooks": [
+        {
+          "id": "espn_bet",
+          "name": "ESPN BET",
+          "odds": [
+            {
+              "id": "espn_bet:moneyline:toronto_raptors:nba:toronto_raptors:charlotte_hornets:2024-10-30",
+              "group": "espn_bet:moneyline:nba:toronto_raptors:charlotte_hornets:2024-10-30",
+              "market": "Moneyline",
+              "name": "Toronto Raptors",
+              "main": true,
+              "price": "+215",
+              "points": null,
+              "selection": "Away",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/6644b93c-8648-41ef-a7ca-c7223f600cb8",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpY2Q2YkdEdW1HcmI0dHJsd1ZJZkZ4STdJdTlUTHJzMmVOTWV1eDdxQWdPTjV2YkRaL2RKd3ZTRldqWFRSaXVHS1hQeU5RWHJSSWozZUZUbUt2Q1d0cSs2S2cxMEQweVR3VzZNbkl0a1dGTmtJNUU0Rjc0MnhWVERzWHo1a3JvTzVBPT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            },
+            {
+              "id": "espn_bet:moneyline:charlotte_hornets:nba:toronto_raptors:charlotte_hornets:2024-10-30",
+              "group": "espn_bet:moneyline:nba:toronto_raptors:charlotte_hornets:2024-10-30",
+              "market": "Moneyline",
+              "name": "Charlotte Hornets",
+              "main": true,
+              "price": "-265",
+              "points": null,
+              "selection": "Home",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/6644b93c-8648-41ef-a7ca-c7223f600cb8",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpY2Q2YkdEdW1HcmI0dHJsd1ZJZkZ4STdJdTlUTHJzMmVOTWV1eDdxQWdPTjV2YkRaL2RKd3ZTRldqWFRSaXVHS1hQeU5RWHJSSWozZUZUbUt2Q1d0cTlIMG41WG80bzJWcEhFQUVpM2YyRlduRHRFMWovRXdoT0U4NUhYNXIvWUFRPT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nba:los_angeles_lakers:cleveland_cavaliers:2024-10-30",
+      "sport": "Basketball",
+      "league": "NBA",
+      "teams": {
+        "away": {
+          "id": "nba:los_angeles_lakers",
+          "name": "Los Angeles Lakers",
+          "abbreviation": "LAL"
+        },
+        "home": {
+          "id": "nba:cleveland_cavaliers",
+          "name": "Cleveland Cavaliers",
+          "abbreviation": "CLE"
+        }
+      },
+      "start": "2024-10-30T23:00:00",
+      "status": "Scheduled",
+      "live": false,
+      "tournament": "Los Angeles Lakers at Cleveland Cavaliers",
+      "sportsbooks": [
+        {
+          "id": "espn_bet",
+          "name": "ESPN BET",
+          "odds": [
+            {
+              "id": "espn_bet:moneyline:los_angeles_lakers:nba:los_angeles_lakers:cleveland_cavaliers:2024-10-30",
+              "group": "espn_bet:moneyline:nba:los_angeles_lakers:cleveland_cavaliers:2024-10-30",
+              "market": "Moneyline",
+              "name": "Los Angeles Lakers",
+              "main": true,
+              "price": "+160",
+              "points": null,
+              "selection": "Away",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/794dd35f-2777-4792-9049-f2d54141b1e0",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpZk9teldDR2pzclRwQ0lZN3Y1ZE5keVpydjBaRThrRHpCRExiUkRQU3A5K1Rib2hmSGQwNDRucmRuc3M4cVNvTlFCTEdUOXR2VW1RL0I2RVBxVzJLbzhjcC9KUTV3cEFxM09yeE1TZU1Yck1IQjdvZ0RqNEUxVmlRNTRjd2w5RmlRPT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            },
+            {
+              "id": "espn_bet:moneyline:cleveland_cavaliers:nba:los_angeles_lakers:cleveland_cavaliers:2024-10-30",
+              "group": "espn_bet:moneyline:nba:los_angeles_lakers:cleveland_cavaliers:2024-10-30",
+              "market": "Moneyline",
+              "name": "Cleveland Cavaliers",
+              "main": true,
+              "price": "-190",
+              "points": null,
+              "selection": "Home",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/794dd35f-2777-4792-9049-f2d54141b1e0",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpZk9teldDR2pzclRwQ0lZN3Y1ZE5keVpydjBaRThrRHpCRExiUkRQU3A5K1Rib2hmSGQwNDRucmRuc3M4cVNvTlFCTEdUOXR2VW1RL0I2RVBxVzJLbzgrNWZwU3laeGlzcWlFRWF5dXkrYjVnbG1jcnZhVW5hVkRCem5yUHY2YlNBPT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nba:boston_celtics:indiana_pacers:2024-10-30",
+      "sport": "Basketball",
+      "league": "NBA",
+      "teams": {
+        "away": {
+          "id": "nba:boston_celtics",
+          "name": "Boston Celtics",
+          "abbreviation": "BOS"
+        },
+        "home": {
+          "id": "nba:indiana_pacers",
+          "name": "Indiana Pacers",
+          "abbreviation": "IND"
+        }
+      },
+      "start": "2024-10-30T23:00:00",
+      "status": "Scheduled",
+      "live": false,
+      "tournament": "Boston Celtics at Indiana Pacers",
+      "sportsbooks": [
+        {
+          "id": "espn_bet",
+          "name": "ESPN BET",
+          "odds": [
+            {
+              "id": "espn_bet:moneyline:boston_celtics:nba:boston_celtics:indiana_pacers:2024-10-30",
+              "group": "espn_bet:moneyline:nba:boston_celtics:indiana_pacers:2024-10-30",
+              "market": "Moneyline",
+              "name": "Boston Celtics",
+              "main": true,
+              "price": "-270",
+              "points": null,
+              "selection": "Away",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/d9f7beac-7ab6-410e-9224-06d2c22e8c3d",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpV1gzWHJRSHp0QXBDY0t3YlBJWko4YXNXWjJSVldZZUl6ZEZCVDlKZ21EMVpyMmJhZmVJQVJRRG9UL09CU3JmcUNaalU5c3YzNkNQRFJDTG1OWEh3ajl4OHpXOVRFdXZaeUpQdGlhczBQeXYrUDhzMkh0WkdadmpLR21lbm9yRDl3PT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            },
+            {
+              "id": "espn_bet:moneyline:indiana_pacers:nba:boston_celtics:indiana_pacers:2024-10-30",
+              "group": "espn_bet:moneyline:nba:boston_celtics:indiana_pacers:2024-10-30",
+              "market": "Moneyline",
+              "name": "Indiana Pacers",
+              "main": true,
+              "price": "+220",
+              "points": null,
+              "selection": "Home",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/d9f7beac-7ab6-410e-9224-06d2c22e8c3d",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpV1gzWHJRSHp0QXBDY0t3YlBJWko4YXNXWjJSVldZZUl6ZEZCVDlKZ21EMVpyMmJhZmVJQVJRRG9UL09CU3JmcUNaalU5c3YzNkNQRFJDTG1OWEh3ajhTOE9HcE1BTUExS0NrUjVwSW11ZjZ4a0d5TzNORVhlQ2ZCVm85VGg5K2VBPT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nba:new_york_knicks:miami_heat:2024-10-30",
+      "sport": "Basketball",
+      "league": "NBA",
+      "teams": {
+        "away": {
+          "id": "nba:new_york_knicks",
+          "name": "New York Knicks",
+          "abbreviation": "NY"
+        },
+        "home": {
+          "id": "nba:miami_heat",
+          "name": "Miami Heat",
+          "abbreviation": "MIA"
+        }
+      },
+      "start": "2024-10-30T23:30:00",
+      "status": "Scheduled",
+      "live": false,
+      "tournament": "New York Knicks at Miami Heat",
+      "sportsbooks": [
+        {
+          "id": "espn_bet",
+          "name": "ESPN BET",
+          "odds": [
+            {
+              "id": "espn_bet:moneyline:new_york_knicks:nba:new_york_knicks:miami_heat:2024-10-30",
+              "group": "espn_bet:moneyline:nba:new_york_knicks:miami_heat:2024-10-30",
+              "market": "Moneyline",
+              "name": "New York Knicks",
+              "main": true,
+              "price": "-125",
+              "points": null,
+              "selection": "Away",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/f9fae73e-2d79-4c4c-9900-dca69ae13515",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpU2Y0OVVLbTVmSkRxTzJGWGJFWGphM0xlV0hrdXZqZzh4OTdiTDhsbE5EREwvL2xjcnE5eGJsUkpkTFl2SDA3VURDcUJaNFJCUWdJMGJ4OGx6M1prb2tYc09UbExxZDVGSGZOWWN1a2t2ZEY=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            },
+            {
+              "id": "espn_bet:moneyline:miami_heat:nba:new_york_knicks:miami_heat:2024-10-30",
+              "group": "espn_bet:moneyline:nba:new_york_knicks:miami_heat:2024-10-30",
+              "market": "Moneyline",
+              "name": "Miami Heat",
+              "main": true,
+              "price": "+105",
+              "points": null,
+              "selection": "Home",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/f9fae73e-2d79-4c4c-9900-dca69ae13515",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpU2Y0OVVLbTVmSkRxTzJGWGJFWGphM0xlV0hrdXZqZzh4OTdiTDhsbE5EREwvL2xjcnE5eGJsUkpkTFl2SDA3VUlKQWk2R1FRUU1uM0Y1VlZXTVRZRXM5RlF5UFJwZ2k1Y3YzSFdWMXRpRDA=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nba:brooklyn_nets:memphis_grizzlies:2024-10-30",
+      "sport": "Basketball",
+      "league": "NBA",
+      "teams": {
+        "away": {
+          "id": "nba:brooklyn_nets",
+          "name": "Brooklyn Nets",
+          "abbreviation": "BKN"
+        },
+        "home": {
+          "id": "nba:memphis_grizzlies",
+          "name": "Memphis Grizzlies",
+          "abbreviation": "MEM"
+        }
+      },
+      "start": "2024-10-31T00:00:00",
+      "status": "Scheduled",
+      "live": false,
+      "tournament": "Brooklyn Nets at Memphis Grizzlies",
+      "sportsbooks": [
+        {
+          "id": "espn_bet",
+          "name": "ESPN BET",
+          "odds": [
+            {
+              "id": "espn_bet:moneyline:brooklyn_nets:nba:brooklyn_nets:memphis_grizzlies:2024-10-30",
+              "group": "espn_bet:moneyline:nba:brooklyn_nets:memphis_grizzlies:2024-10-30",
+              "market": "Moneyline",
+              "name": "Brooklyn Nets",
+              "main": true,
+              "price": "+550",
+              "points": null,
+              "selection": "Away",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/0db8cd80-c6ed-4db4-8add-86e1c5c3aed6",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpWnVta0VCUzRxcjhOL3dUUUVoOGJCSy9abW93MklzRENTK3BKbTBqcDI5NmpRTE1mOFhWNmp4WWlrRzAyYk9YZEsvM1JOZDlucktoRjFDWW9CeXA3UFVDdkdGcm1UeVV3bkhRbmVJZVJ4QzJ4N0l3blJlNEYrbUdlZ0E2V0syK2ZnPT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            },
+            {
+              "id": "espn_bet:moneyline:memphis_grizzlies:nba:brooklyn_nets:memphis_grizzlies:2024-10-30",
+              "group": "espn_bet:moneyline:nba:brooklyn_nets:memphis_grizzlies:2024-10-30",
+              "market": "Moneyline",
+              "name": "Memphis Grizzlies",
+              "main": true,
+              "price": "-1000",
+              "points": null,
+              "selection": "Home",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/0db8cd80-c6ed-4db4-8add-86e1c5c3aed6",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpWnVta0VCUzRxcjhOL3dUUUVoOGJCSy9abW93MklzRENTK3BKbTBqcDI5NmpRTE1mOFhWNmp4WWlrRzAyYk9YZEsvM1JOZDlucktoRjFDWW9CeXA3UFhDOVZ6bGFycUJ3WXJmTE9iT0RXTWMxRCt6cW1xT3B6Y2UwZlBuZWpQQW1nPT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nba:orlando_magic:chicago_bulls:2024-10-30",
+      "sport": "Basketball",
+      "league": "NBA",
+      "teams": {
+        "away": {
+          "id": "nba:orlando_magic",
+          "name": "Orlando Magic",
+          "abbreviation": "ORL"
+        },
+        "home": {
+          "id": "nba:chicago_bulls",
+          "name": "Chicago Bulls",
+          "abbreviation": "CHI"
+        }
+      },
+      "start": "2024-10-31T00:00:00",
+      "status": "Scheduled",
+      "live": false,
+      "tournament": "Orlando Magic at Chicago Bulls",
+      "sportsbooks": [
+        {
+          "id": "espn_bet",
+          "name": "ESPN BET",
+          "odds": [
+            {
+              "id": "espn_bet:moneyline:orlando_magic:nba:orlando_magic:chicago_bulls:2024-10-30",
+              "group": "espn_bet:moneyline:nba:orlando_magic:chicago_bulls:2024-10-30",
+              "market": "Moneyline",
+              "name": "Orlando Magic",
+              "main": true,
+              "price": "-210",
+              "points": null,
+              "selection": "Away",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/1117af6d-b4c9-4197-b822-43edca4da789",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpZWttMHBoTUR4TmtxdnVtd2ZGSGV6MXZyaXp1UXhaTGxrR3hNMExJZWxPVHZXeFFQN1V4eWc2Vy9PSW90U1hPQzUxSERWZzI3NkVZeGdJc2NlVW9EbGVqbVhPWWhlNDcyV2VJcTlxOEZGTmo=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            },
+            {
+              "id": "espn_bet:moneyline:chicago_bulls:nba:orlando_magic:chicago_bulls:2024-10-30",
+              "group": "espn_bet:moneyline:nba:orlando_magic:chicago_bulls:2024-10-30",
+              "market": "Moneyline",
+              "name": "Chicago Bulls",
+              "main": true,
+              "price": "+170",
+              "points": null,
+              "selection": "Home",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/1117af6d-b4c9-4197-b822-43edca4da789",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpZWttMHBoTUR4TmtxdnVtd2ZGSGV6MXZyaXp1UXhaTGxrR3hNMExJZWxPVHZXeFFQN1V4eWc2Vy9PSW90U1hPQ3dlVisyeEdpb3Q3TzJpNXhVb2h0MmxlbGpyRnJEVi9yR1JzQ2x3QVFGQzU=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nba:san_antonio_spurs:oklahoma_city_thunder:2024-10-30",
+      "sport": "Basketball",
+      "league": "NBA",
+      "teams": {
+        "away": {
+          "id": "nba:san_antonio_spurs",
+          "name": "San Antonio Spurs",
+          "abbreviation": "SA"
+        },
+        "home": {
+          "id": "nba:oklahoma_city_thunder",
+          "name": "Oklahoma City Thunder",
+          "abbreviation": "OKC"
+        }
+      },
+      "start": "2024-10-31T01:30:00",
+      "status": "Scheduled",
+      "live": false,
+      "tournament": "San Antonio Spurs at Oklahoma City Thunder",
+      "sportsbooks": [
+        {
+          "id": "espn_bet",
+          "name": "ESPN BET",
+          "odds": [
+            {
+              "id": "espn_bet:moneyline:san_antonio_spurs:nba:san_antonio_spurs:oklahoma_city_thunder:2024-10-30",
+              "group": "espn_bet:moneyline:nba:san_antonio_spurs:oklahoma_city_thunder:2024-10-30",
+              "market": "Moneyline",
+              "name": "San Antonio Spurs",
+              "main": true,
+              "price": "+550",
+              "points": null,
+              "selection": "Away",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/8bf5b644-0bab-4bde-8782-b77b8bfa4dfa",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpZFJXT2JiNnZKTXdRdUo5bi9kUFg2ZzM3bEJEVG80amtLZmRacWR1VDNIRk9lcURZdGZlMWVuSkwwbWNZejRNUVMrM1BSS3E4OHdvdmd5cWxnTmx4aWMxRHNLYTE4NGxWdUg2YzJ1ZHFEUmdKOUh1K2JOcmFNMFZaa1ErQUpXK2x3PT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            },
+            {
+              "id": "espn_bet:moneyline:oklahoma_city_thunder:nba:san_antonio_spurs:oklahoma_city_thunder:2024-10-30",
+              "group": "espn_bet:moneyline:nba:san_antonio_spurs:oklahoma_city_thunder:2024-10-30",
+              "market": "Moneyline",
+              "name": "Oklahoma City Thunder",
+              "main": true,
+              "price": "-1000",
+              "points": null,
+              "selection": "Home",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/8bf5b644-0bab-4bde-8782-b77b8bfa4dfa",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpZFJXT2JiNnZKTXdRdUo5bi9kUFg2ZzM3bEJEVG80amtLZmRacWR1VDNIRk9lcURZdGZlMWVuSkwwbWNZejRNUVMrM1BSS3E4OHdvdmd5cWxnTmx4aWVaT2FDQzY3N1hMUlRXOFZ5OFFwRll3VENDRy84NldrK0FqZFErMjYxYzNFcll1S2N2Nm1TOGZ5dTlCOS9TS0Y0PQ==",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nba:new_orleans_pelicans:golden_state_warriors:2024-10-30",
+      "sport": "Basketball",
+      "league": "NBA",
+      "teams": {
+        "away": {
+          "id": "nba:new_orleans_pelicans",
+          "name": "New Orleans Pelicans",
+          "abbreviation": "NO"
+        },
+        "home": {
+          "id": "nba:golden_state_warriors",
+          "name": "Golden State Warriors",
+          "abbreviation": "GS"
+        }
+      },
+      "start": "2024-10-31T02:00:00",
+      "status": "Scheduled",
+      "live": false,
+      "tournament": "New Orleans Pelicans at Golden State Warriors",
+      "sportsbooks": [
+        {
+          "id": "espn_bet",
+          "name": "ESPN BET",
+          "odds": [
+            {
+              "id": "espn_bet:moneyline:new_orleans_pelicans:nba:new_orleans_pelicans:golden_state_warriors:2024-10-30",
+              "group": "espn_bet:moneyline:nba:new_orleans_pelicans:golden_state_warriors:2024-10-30",
+              "market": "Moneyline",
+              "name": "New Orleans Pelicans",
+              "main": true,
+              "price": "+120",
+              "points": null,
+              "selection": "Away",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/428f209d-7c7c-4e0e-bb1f-ffdc8acb1c4b",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpZnU5TitYM0FZME51ekhuQ1dtRnY3a242RkduYlJTN0FSUWh2VHBhWG9reXdHckJqSS9WL1JBbERvRWtnVlZmWWRkR0hDcFJDWi9YaDlHOU92M3FkZXdSL2NPcE1vUEZTdmZsaEdNVE9xUGhtUmpTYlRYd1dQdXlZTkpRWEVWdVRieE5Xdzk5TE1lRVVpS3czUVhhS01zPQ==",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            },
+            {
+              "id": "espn_bet:moneyline:golden_state_warriors:nba:new_orleans_pelicans:golden_state_warriors:2024-10-30",
+              "group": "espn_bet:moneyline:nba:new_orleans_pelicans:golden_state_warriors:2024-10-30",
+              "market": "Moneyline",
+              "name": "Golden State Warriors",
+              "main": true,
+              "price": "-145",
+              "points": null,
+              "selection": "Home",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/428f209d-7c7c-4e0e-bb1f-ffdc8acb1c4b",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpZnU5TitYM0FZME51ekhuQ1dtRnY3a242RkduYlJTN0FSUWh2VHBhWG9reXdHckJqSS9WL1JBbERvRWtnVlZmWWRkR0hDcFJDWi9YaDlHOU92M3FkZXpNeml4dElXNnAzUndmWlE4Z1VjTmZvdllpaWRWS1NUWXhsZkdUY0JCNnFUOGxUYUU3NWVWdndSOEh5bmNid1dJPQ==",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nba:portland_trail_blazers:la_clippers:2024-10-30",
+      "sport": "Basketball",
+      "league": "NBA",
+      "teams": {
+        "away": {
+          "id": "nba:portland_trail_blazers",
+          "name": "Portland Trail Blazers",
+          "abbreviation": "POR"
+        },
+        "home": {
+          "id": "nba:la_clippers",
+          "name": "LA Clippers",
+          "abbreviation": "LAC"
+        }
+      },
+      "start": "2024-10-31T02:30:00",
+      "status": "Scheduled",
+      "live": false,
+      "tournament": "Portland Trail Blazers at LA Clippers",
+      "sportsbooks": [
+        {
+          "id": "espn_bet",
+          "name": "ESPN BET",
+          "odds": [
+            {
+              "id": "espn_bet:moneyline:portland_trail_blazers:nba:portland_trail_blazers:la_clippers:2024-10-30",
+              "group": "espn_bet:moneyline:nba:portland_trail_blazers:la_clippers:2024-10-30",
+              "market": "Moneyline",
+              "name": "Portland Trail Blazers",
+              "main": true,
+              "price": "+280",
+              "points": null,
+              "selection": "Away",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/55a8a212-74c1-4012-b885-5c5aef94bd6e",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpWVEvR2VsNUNZeEIzalVMMDRaQ2pZcm9xazcweWZIZC9QSC9BcHBzblJjYlhrSXVnMDBZenVYZ3NTMVFibno0djdRNXUrWWJKeUpGUkNUWFFvT3FvaG5aZFlsam1RY3hOSDZRT1M4RUZuemlRN3B6Y2RVZWZqUW9OVWtJaXF6ZjZnPT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            },
+            {
+              "id": "espn_bet:moneyline:la_clippers:nba:portland_trail_blazers:la_clippers:2024-10-30",
+              "group": "espn_bet:moneyline:nba:portland_trail_blazers:la_clippers:2024-10-30",
+              "market": "Moneyline",
+              "name": "LA Clippers",
+              "main": true,
+              "price": "-350",
+              "points": null,
+              "selection": "Home",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/55a8a212-74c1-4012-b885-5c5aef94bd6e",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpWVEvR2VsNUNZeEIzalVMMDRaQ2pZcm9xazcweWZIZC9QSC9BcHBzblJjYlhrSXVnMDBZenVYZ3NTMVFibno0djdRNXUrWWJKeUpGUkNUWFFvT3FvaG14UlRXVHFJUHZqaDFQS2YxaWd6Y0FCMDJqR2xqWTl1WGEyUmpTODRjSkJnPT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nba:san_antonio_spurs:new_york_knicks:2024-12-25",
+      "sport": "Basketball",
+      "league": "NBA",
+      "teams": {
+        "away": {
+          "id": "nba:san_antonio_spurs",
+          "name": "San Antonio Spurs",
+          "abbreviation": "SA"
+        },
+        "home": {
+          "id": "nba:new_york_knicks",
+          "name": "New York Knicks",
+          "abbreviation": "NY"
+        }
+      },
+      "start": "2024-12-25T17:00:00",
+      "status": "Scheduled",
+      "live": false,
+      "tournament": "San Antonio Spurs at New York Knicks",
+      "sportsbooks": [
+        {
+          "id": "espn_bet",
+          "name": "ESPN BET",
+          "odds": [
+            {
+              "id": "espn_bet:moneyline:san_antonio_spurs:nba:san_antonio_spurs:new_york_knicks:2024-12-25",
+              "group": "espn_bet:moneyline:nba:san_antonio_spurs:new_york_knicks:2024-12-25",
+              "market": "Moneyline",
+              "name": "San Antonio Spurs",
+              "main": true,
+              "price": "+340",
+              "points": null,
+              "selection": "Away",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/047b8ee2-ac09-40de-9d93-1504cc25f5cb",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpZFJXT2JiNnZKTXdRdUo5bi9kUFg2aWt1MXBrQ28vdm50djNrQmkwZitZUUd4UzF1bDJuNDNXdHZqWG9xTkRKaVhBNEdCdDN2OGVoMGVsUlN1NXRQcG1tNXl5QWk5V1Bna3c2a3JaUlFyS0k5MFB1M21sVFNzZm9lcThjcnBaZzlRPT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            },
+            {
+              "id": "espn_bet:moneyline:new_york_knicks:nba:san_antonio_spurs:new_york_knicks:2024-12-25",
+              "group": "espn_bet:moneyline:nba:san_antonio_spurs:new_york_knicks:2024-12-25",
+              "market": "Moneyline",
+              "name": "New York Knicks",
+              "main": true,
+              "price": "-450",
+              "points": null,
+              "selection": "Home",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/047b8ee2-ac09-40de-9d93-1504cc25f5cb",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpZFJXT2JiNnZKTXdRdUo5bi9kUFg2aWt1MXBrQ28vdm50djNrQmkwZitZUUd4UzF1bDJuNDNXdHZqWG9xTkRKaVhBNEdCdDN2OGVoMGVsUlN1NXRQcG1FUFNGeEhwMGtaU2NQQ1hLdFd3VHZwQlhML3d1bmdEY1RHNElSelRFZy93PT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nba:minnesota_timberwolves:dallas_mavericks:2024-12-25",
+      "sport": "Basketball",
+      "league": "NBA",
+      "teams": {
+        "away": {
+          "id": "nba:minnesota_timberwolves",
+          "name": "Minnesota Timberwolves",
+          "abbreviation": "MIN"
+        },
+        "home": {
+          "id": "nba:dallas_mavericks",
+          "name": "Dallas Mavericks",
+          "abbreviation": "DAL"
+        }
+      },
+      "start": "2024-12-25T19:30:00",
+      "status": "Scheduled",
+      "live": false,
+      "tournament": "Minnesota Timberwolves at Dallas Mavericks",
+      "sportsbooks": [
+        {
+          "id": "espn_bet",
+          "name": "ESPN BET",
+          "odds": [
+            {
+              "id": "espn_bet:moneyline:minnesota_timberwolves:nba:minnesota_timberwolves:dallas_mavericks:2024-12-25",
+              "group": "espn_bet:moneyline:nba:minnesota_timberwolves:dallas_mavericks:2024-12-25",
+              "market": "Moneyline",
+              "name": "Minnesota Timberwolves",
+              "main": true,
+              "price": "+130",
+              "points": null,
+              "selection": "Away",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/3813078c-b3a0-4b26-a0aa-93d66a71c05d",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpWGJuRmlGbUxpczErRmRuZ2czaFNVaDZLNXo2WnNsWWNuSW05NzNJNmN0cm4xbElzb2gwU2x5WFZuSmNPTlNYMVYwR1ViUUxXK0hVYnpUZWYzazVUNUh3VG9mUEh0dStNeVBrbVVjRnhtNDNzSDJ4cjVhQzI1dmpBWkN0eFBvRGJFVGl2SEp1d1F5dDFvMHlNYTlrMllrPQ==",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            },
+            {
+              "id": "espn_bet:moneyline:dallas_mavericks:nba:minnesota_timberwolves:dallas_mavericks:2024-12-25",
+              "group": "espn_bet:moneyline:nba:minnesota_timberwolves:dallas_mavericks:2024-12-25",
+              "market": "Moneyline",
+              "name": "Dallas Mavericks",
+              "main": true,
+              "price": "-150",
+              "points": null,
+              "selection": "Home",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/3813078c-b3a0-4b26-a0aa-93d66a71c05d",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpWGJuRmlGbUxpczErRmRuZ2czaFNVaDZLNXo2WnNsWWNuSW05NzNJNmN0cm4xbElzb2gwU2x5WFZuSmNPTlNYMVYwR1ViUUxXK0hVYnpUZWYzazVUNUZnaTVwS0hyM01xQ1hDeDZpajR6TTl6NkV6TC9LL0RWOURBNWhvQS9tNml3PT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nba:philadelphia_76ers:boston_celtics:2024-12-25",
+      "sport": "Basketball",
+      "league": "NBA",
+      "teams": {
+        "away": {
+          "id": "nba:philadelphia_76ers",
+          "name": "Philadelphia 76ers",
+          "abbreviation": "PHI"
+        },
+        "home": {
+          "id": "nba:boston_celtics",
+          "name": "Boston Celtics",
+          "abbreviation": "BOS"
+        }
+      },
+      "start": "2024-12-25T22:00:00",
+      "status": "Scheduled",
+      "live": false,
+      "tournament": "Philadelphia 76ers at Boston Celtics",
+      "sportsbooks": [
+        {
+          "id": "espn_bet",
+          "name": "ESPN BET",
+          "odds": [
+            {
+              "id": "espn_bet:moneyline:philadelphia_76ers:nba:philadelphia_76ers:boston_celtics:2024-12-25",
+              "group": "espn_bet:moneyline:nba:philadelphia_76ers:boston_celtics:2024-12-25",
+              "market": "Moneyline",
+              "name": "Philadelphia 76ers",
+              "main": true,
+              "price": "+180",
+              "points": null,
+              "selection": "Away",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/8550a5df-0d09-4356-a293-94ac0c3fd29c",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpYkVKQkk1RUhvaFpOUjgwa2VGc1d4bGV2TlJXc3pTbEZ5bWZYd29mRlRzSW9NNFgyTGxvUVlpdkdHb01QS2JvWGgzL3g1Z21YbDZmcHY5aWM0RFRCcmFvUWprVWRqSndFZk1sRk9ZUmw3MWFnM2dzM2JCUVhKT1BudWdwRUhHR2dRPT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            },
+            {
+              "id": "espn_bet:moneyline:boston_celtics:nba:philadelphia_76ers:boston_celtics:2024-12-25",
+              "group": "espn_bet:moneyline:nba:philadelphia_76ers:boston_celtics:2024-12-25",
+              "market": "Moneyline",
+              "name": "Boston Celtics",
+              "main": true,
+              "price": "-210",
+              "points": null,
+              "selection": "Home",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/8550a5df-0d09-4356-a293-94ac0c3fd29c",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpYkVKQkk1RUhvaFpOUjgwa2VGc1d4bGV2TlJXc3pTbEZ5bWZYd29mRlRzSW9NNFgyTGxvUVlpdkdHb01QS2JvWGgzL3g1Z21YbDZmcHY5aWM0RFRCclpVZUR1SDVvZVdWTXhzcTk2QXJiaXNLbnBuUjBQQlIwU2FIN1RHNExrWkl3PT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nba:los_angeles_lakers:golden_state_warriors:2024-12-25",
+      "sport": "Basketball",
+      "league": "NBA",
+      "teams": {
+        "away": {
+          "id": "nba:los_angeles_lakers",
+          "name": "Los Angeles Lakers",
+          "abbreviation": "LAL"
+        },
+        "home": {
+          "id": "nba:golden_state_warriors",
+          "name": "Golden State Warriors",
+          "abbreviation": "GS"
+        }
+      },
+      "start": "2024-12-26T01:00:00",
+      "status": "Scheduled",
+      "live": false,
+      "tournament": "Los Angeles Lakers at Golden State Warriors",
+      "sportsbooks": [
+        {
+          "id": "espn_bet",
+          "name": "ESPN BET",
+          "odds": [
+            {
+              "id": "espn_bet:moneyline:los_angeles_lakers:nba:los_angeles_lakers:golden_state_warriors:2024-12-25",
+              "group": "espn_bet:moneyline:nba:los_angeles_lakers:golden_state_warriors:2024-12-25",
+              "market": "Moneyline",
+              "name": "Los Angeles Lakers",
+              "main": true,
+              "price": "+135",
+              "points": null,
+              "selection": "Away",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/13a7b4e0-f4f0-4a47-9aef-90a297890814",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpZk9teldDR2pzclRwQ0lZN3Y1ZE5kem5QN0ZYeS82UlpVendWNmxDN1d6Q1JXTm5ncjFhZnVNOVFPMGVkc2NYenVJRlVwa1pUQkIvbCtKV3UrTTl1eDAyTFpnUVk2R0p3ZnBmYkNnZUdWQUYrNDlLbEtWTVhsK3VIR1ZPZ0pHR2x6SGhwWXF2a0pSSWpMb1pFS0FQRExrPQ==",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            },
+            {
+              "id": "espn_bet:moneyline:golden_state_warriors:nba:los_angeles_lakers:golden_state_warriors:2024-12-25",
+              "group": "espn_bet:moneyline:nba:los_angeles_lakers:golden_state_warriors:2024-12-25",
+              "market": "Moneyline",
+              "name": "Golden State Warriors",
+              "main": true,
+              "price": "-155",
+              "points": null,
+              "selection": "Home",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/13a7b4e0-f4f0-4a47-9aef-90a297890814",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpZk9teldDR2pzclRwQ0lZN3Y1ZE5kem5QN0ZYeS82UlpVendWNmxDN1d6Q1JXTm5ncjFhZnVNOVFPMGVkc2NYenVJRlVwa1pUQkIvbCtKV3UrTTl1eDNzUmZaemdWSk5tY3JmL0grZ3prNDAweXVFb0hvRXBRWTRoQ3l2Y0NQSEV4Y3VNZTFjelJHMkdqYW10RWlrVzI4PQ==",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nba:denver_nuggets:phoenix_suns:2024-12-25",
+      "sport": "Basketball",
+      "league": "NBA",
+      "teams": {
+        "away": {
+          "id": "nba:denver_nuggets",
+          "name": "Denver Nuggets",
+          "abbreviation": "DEN"
+        },
+        "home": {
+          "id": "nba:phoenix_suns",
+          "name": "Phoenix Suns",
+          "abbreviation": "PHX"
+        }
+      },
+      "start": "2024-12-26T03:30:00",
+      "status": "Scheduled",
+      "live": false,
+      "tournament": "Denver Nuggets at Phoenix Suns",
+      "sportsbooks": [
+        {
+          "id": "espn_bet",
+          "name": "ESPN BET",
+          "odds": [
+            {
+              "id": "espn_bet:moneyline:denver_nuggets:nba:denver_nuggets:phoenix_suns:2024-12-25",
+              "group": "espn_bet:moneyline:nba:denver_nuggets:phoenix_suns:2024-12-25",
+              "market": "Moneyline",
+              "name": "Denver Nuggets",
+              "main": true,
+              "price": "+110",
+              "points": null,
+              "selection": "Away",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/bc51aae3-939d-496a-a1d1-ddc5055f966d",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpWXAwRE9yQWFhZHpaY0VZMjVKcmxSVzVpTGhucGlwQ2piS3FJS0cvWWtrVTB5L1BJVi9NcCtDSVhnZVVEdE11M0U1UjZXNkpTakdNU0NpMWxYSmhIMVZ5NFdjd1NRUC92aHFPL0pKYmY5WkE=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            },
+            {
+              "id": "espn_bet:moneyline:phoenix_suns:nba:denver_nuggets:phoenix_suns:2024-12-25",
+              "group": "espn_bet:moneyline:nba:denver_nuggets:phoenix_suns:2024-12-25",
+              "market": "Moneyline",
+              "name": "Phoenix Suns",
+              "main": true,
+              "price": "-130",
+              "points": null,
+              "selection": "Home",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/bc51aae3-939d-496a-a1d1-ddc5055f966d",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpWXAwRE9yQWFhZHpaY0VZMjVKcmxSVzVpTGhucGlwQ2piS3FJS0cvWWtrVTB5L1BJVi9NcCtDSVhnZVVEdE11M0UzQVhhTWdoOHVrMEl4OEJLM214cjVPMFRKeFo5M0hiaUtSZHRWa0FNRTU=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nba:miami_heat:detroit_pistons:2024-11-12",
+      "sport": "Basketball",
+      "league": "NBA",
+      "teams": {
+        "away": {
+          "id": "nba:miami_heat",
+          "name": "Miami Heat",
+          "abbreviation": "MIA"
+        },
+        "home": {
+          "id": "nba:detroit_pistons",
+          "name": "Detroit Pistons",
+          "abbreviation": "DET"
+        }
+      },
+      "start": "2024-11-13T00:00:00",
+      "status": "Scheduled",
+      "live": false,
+      "tournament": "NBA Cup - Group Play",
+      "sportsbooks": [
+        {
+          "id": "espn_bet",
+          "name": "ESPN BET",
+          "odds": [
+            {
+              "id": "espn_bet:moneyline:miami_heat:nba:miami_heat:detroit_pistons:2024-11-12",
+              "group": "espn_bet:moneyline:nba:miami_heat:detroit_pistons:2024-11-12",
+              "market": "Moneyline",
+              "name": "Miami Heat",
+              "main": true,
+              "price": "-160",
+              "points": null,
+              "selection": "Away",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/455bc7bb-a549-493c-878b-720a40790614",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpY0VwWkhpNFh2RjJQRWtuTmFOWXpLbXhSSVJYR2ozbnpMZWJBTFZTR0FNd1VaWmR4d29WY2xHc0FiRGt6Q0lDanVTNGVLa0pWTEYzV2tYT2dXMDlEN3dja3VMODVrVVIzdFRvL0pzZ2JEM2U=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            },
+            {
+              "id": "espn_bet:moneyline:detroit_pistons:nba:miami_heat:detroit_pistons:2024-11-12",
+              "group": "espn_bet:moneyline:nba:miami_heat:detroit_pistons:2024-11-12",
+              "market": "Moneyline",
+              "name": "Detroit Pistons",
+              "main": true,
+              "price": "+130",
+              "points": null,
+              "selection": "Home",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/455bc7bb-a549-493c-878b-720a40790614",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpY0VwWkhpNFh2RjJQRWtuTmFOWXpLbXhSSVJYR2ozbnpMZWJBTFZTR0FNd1VaWmR4d29WY2xHc0FiRGt6Q0lDanVQQlhOWnFjVEs2MFhHRDlUVmJyRnBnWEJ4dnhkeHBiM2FRUjNqeXJrVXQ=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nba:charlotte_hornets:orlando_magic:2024-11-12",
+      "sport": "Basketball",
+      "league": "NBA",
+      "teams": {
+        "away": {
+          "id": "nba:charlotte_hornets",
+          "name": "Charlotte Hornets",
+          "abbreviation": "CHA"
+        },
+        "home": {
+          "id": "nba:orlando_magic",
+          "name": "Orlando Magic",
+          "abbreviation": "ORL"
+        }
+      },
+      "start": "2024-11-13T00:00:00",
+      "status": "Scheduled",
+      "live": false,
+      "tournament": "NBA Cup - Group Play",
+      "sportsbooks": [
+        {
+          "id": "espn_bet",
+          "name": "ESPN BET",
+          "odds": [
+            {
+              "id": "espn_bet:moneyline:charlotte_hornets:nba:charlotte_hornets:orlando_magic:2024-11-12",
+              "group": "espn_bet:moneyline:nba:charlotte_hornets:orlando_magic:2024-11-12",
+              "market": "Moneyline",
+              "name": "Charlotte Hornets",
+              "main": true,
+              "price": "+270",
+              "points": null,
+              "selection": "Away",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/4ff0d52f-c896-4b57-b65c-02e9b6a1b777",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpZGRuNDhWTzZkOGd3N1crWXZJY2JUYkxaY1BBSU1oWE5DZG11TUtxQW1sMkE3d3dFNGkyWWFtRHJSYzRpSGZMQy9jL3lpR1pGSlVDcHdYZURzRWhYakF0WnRJbCs4dmpPVXBWL01BeTRHT2NPQ24zS3dJQ2hPci9pQUxrUzJGNTR3PT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            },
+            {
+              "id": "espn_bet:moneyline:orlando_magic:nba:charlotte_hornets:orlando_magic:2024-11-12",
+              "group": "espn_bet:moneyline:nba:charlotte_hornets:orlando_magic:2024-11-12",
+              "market": "Moneyline",
+              "name": "Orlando Magic",
+              "main": true,
+              "price": "-340",
+              "points": null,
+              "selection": "Home",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/4ff0d52f-c896-4b57-b65c-02e9b6a1b777",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpZGRuNDhWTzZkOGd3N1crWXZJY2JUYkxaY1BBSU1oWE5DZG11TUtxQW1sMkE3d3dFNGkyWWFtRHJSYzRpSGZMQy9jL3lpR1pGSlVDcHdYZURzRWhYakJkaU5XRU5KUjlKdFljZkdIbTEwN0ZmZ1pRcWowVWVxOFlmdElTRFpZRjRRPT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nba:atlanta_hawks:boston_celtics:2024-11-12",
+      "sport": "Basketball",
+      "league": "NBA",
+      "teams": {
+        "away": {
+          "id": "nba:atlanta_hawks",
+          "name": "Atlanta Hawks",
+          "abbreviation": "ATL"
+        },
+        "home": {
+          "id": "nba:boston_celtics",
+          "name": "Boston Celtics",
+          "abbreviation": "BOS"
+        }
+      },
+      "start": "2024-11-13T00:00:00",
+      "status": "Scheduled",
+      "live": false,
+      "tournament": "NBA Cup - Group Play",
+      "sportsbooks": [
+        {
+          "id": "espn_bet",
+          "name": "ESPN BET",
+          "odds": [
+            {
+              "id": "espn_bet:moneyline:atlanta_hawks:nba:atlanta_hawks:boston_celtics:2024-11-12",
+              "group": "espn_bet:moneyline:nba:atlanta_hawks:boston_celtics:2024-11-12",
+              "market": "Moneyline",
+              "name": "Atlanta Hawks",
+              "main": true,
+              "price": "+550",
+              "points": null,
+              "selection": "Away",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/6f79790c-8e76-42fe-b90b-fb0f5e5fc4bc",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpWUs2TU50eW5hZS9vNWhVd08zc3pSaWdlVjJaeVYwVkRkOVYxWXZMTjI0SHY0TmhBVWNoVzAvVm5RQi8rTjJIc09wVzN0LzVpanpVMmMwbncyMUNwbW91Nm5McS9DSXpxaE53bFhFM3ZpWEM=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            },
+            {
+              "id": "espn_bet:moneyline:boston_celtics:nba:atlanta_hawks:boston_celtics:2024-11-12",
+              "group": "espn_bet:moneyline:nba:atlanta_hawks:boston_celtics:2024-11-12",
+              "market": "Moneyline",
+              "name": "Boston Celtics",
+              "main": true,
+              "price": "-1000",
+              "points": null,
+              "selection": "Home",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/6f79790c-8e76-42fe-b90b-fb0f5e5fc4bc",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpWUs2TU50eW5hZS9vNWhVd08zc3pSaWdlVjJaeVYwVkRkOVYxWXZMTjI0SHY0TmhBVWNoVzAvVm5RQi8rTjJIc09wVzN0LzVpanpVMmMwbncyMUNwbW9OQUhFR3hWcEJqaWxsNU9WQWV6N1o1Ti91UU5HOU9OcVozMzd4RlJtYnBnPT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nba:new_york_knicks:philadelphia_76ers:2024-11-12",
+      "sport": "Basketball",
+      "league": "NBA",
+      "teams": {
+        "away": {
+          "id": "nba:new_york_knicks",
+          "name": "New York Knicks",
+          "abbreviation": "NY"
+        },
+        "home": {
+          "id": "nba:philadelphia_76ers",
+          "name": "Philadelphia 76ers",
+          "abbreviation": "PHI"
+        }
+      },
+      "start": "2024-11-13T00:30:00",
+      "status": "Scheduled",
+      "live": false,
+      "tournament": "NBA Cup - Group Play",
+      "sportsbooks": [
+        {
+          "id": "espn_bet",
+          "name": "ESPN BET",
+          "odds": [
+            {
+              "id": "espn_bet:moneyline:new_york_knicks:nba:new_york_knicks:philadelphia_76ers:2024-11-12",
+              "group": "espn_bet:moneyline:nba:new_york_knicks:philadelphia_76ers:2024-11-12",
+              "market": "Moneyline",
+              "name": "New York Knicks",
+              "main": true,
+              "price": "+100",
+              "points": null,
+              "selection": "Away",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/f9a38e70-5c17-484c-a4f2-c2b630acd5c4",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpU2Y0OVVLbTVmSkRxTzJGWGJFWGphMi9zTmpYUm9ZUXhkNlgwVmEwZWhCMGxtaE5kazZNNFJTWDlsTlJQRmFIL3pjUVdpeWZqOEFBUTk4dzhiWndGK0d4aUN5ZE1tNWdsemdoTjFuZ3VBSmhhV3Vhb1VBNGNQVjBQTHpya3ptWjlRPT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            },
+            {
+              "id": "espn_bet:moneyline:philadelphia_76ers:nba:new_york_knicks:philadelphia_76ers:2024-11-12",
+              "group": "espn_bet:moneyline:nba:new_york_knicks:philadelphia_76ers:2024-11-12",
+              "market": "Moneyline",
+              "name": "Philadelphia 76ers",
+              "main": true,
+              "price": "-120",
+              "points": null,
+              "selection": "Home",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/f9a38e70-5c17-484c-a4f2-c2b630acd5c4",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpU2Y0OVVLbTVmSkRxTzJGWGJFWGphMi9zTmpYUm9ZUXhkNlgwVmEwZWhCMGxtaE5kazZNNFJTWDlsTlJQRmFIL3pjUVdpeWZqOEFBUTk4dzhiWndGK0VOdVJsK2Fqd2hWQnZ5cmVLT1ZBWkE5S1lmcFJSdzVIa0VmM2hGRUFLRUFnPT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nba:toronto_raptors:milwaukee_bucks:2024-11-12",
+      "sport": "Basketball",
+      "league": "NBA",
+      "teams": {
+        "away": {
+          "id": "nba:toronto_raptors",
+          "name": "Toronto Raptors",
+          "abbreviation": "TOR"
+        },
+        "home": {
+          "id": "nba:milwaukee_bucks",
+          "name": "Milwaukee Bucks",
+          "abbreviation": "MIL"
+        }
+      },
+      "start": "2024-11-13T01:00:00",
+      "status": "Scheduled",
+      "live": false,
+      "tournament": "NBA Cup - Group Play",
+      "sportsbooks": [
+        {
+          "id": "espn_bet",
+          "name": "ESPN BET",
+          "odds": [
+            {
+              "id": "espn_bet:moneyline:toronto_raptors:nba:toronto_raptors:milwaukee_bucks:2024-11-12",
+              "group": "espn_bet:moneyline:nba:toronto_raptors:milwaukee_bucks:2024-11-12",
+              "market": "Moneyline",
+              "name": "Toronto Raptors",
+              "main": true,
+              "price": "+320",
+              "points": null,
+              "selection": "Away",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/b4300e31-5da6-448f-be34-667bbb08eda5",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpY2Q2YkdEdW1HcmI0dHJsd1ZJZkZ4TGRzTk1UREFveTlhV1VYc29XeUlUUmZteStKN3F6RGoweDdrWForUkNZTnBRcEFtSmZaaytFY0txMVFqeG1JcHZlcDNvT1FFam43dUxGNDB3Vk4xK3M0K3UzTEEwaU5jWE83WVFqR2Vxa2FBPT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            },
+            {
+              "id": "espn_bet:moneyline:milwaukee_bucks:nba:toronto_raptors:milwaukee_bucks:2024-11-12",
+              "group": "espn_bet:moneyline:nba:toronto_raptors:milwaukee_bucks:2024-11-12",
+              "market": "Moneyline",
+              "name": "Milwaukee Bucks",
+              "main": true,
+              "price": "-425",
+              "points": null,
+              "selection": "Home",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/b4300e31-5da6-448f-be34-667bbb08eda5",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpY2Q2YkdEdW1HcmI0dHJsd1ZJZkZ4TGRzTk1UREFveTlhV1VYc29XeUlUUmZteStKN3F6RGoweDdrWForUkNZTnBRcEFtSmZaaytFY0txMVFqeG1JcHRIcHJLYVBXMmdBbWpNUDhaYWNRM1V5MlZ0MnZlRUZBdDdKN1NKYlJmTEZnPT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nba:phoenix_suns:utah_jazz:2024-11-12",
+      "sport": "Basketball",
+      "league": "NBA",
+      "teams": {
+        "away": {
+          "id": "nba:phoenix_suns",
+          "name": "Phoenix Suns",
+          "abbreviation": "PHX"
+        },
+        "home": {
+          "id": "nba:utah_jazz",
+          "name": "Utah Jazz",
+          "abbreviation": "UTAH"
+        }
+      },
+      "start": "2024-11-13T02:00:00",
+      "status": "Scheduled",
+      "live": false,
+      "tournament": "NBA Cup - Group Play",
+      "sportsbooks": [
+        {
+          "id": "espn_bet",
+          "name": "ESPN BET",
+          "odds": [
+            {
+              "id": "espn_bet:moneyline:phoenix_suns:nba:phoenix_suns:utah_jazz:2024-11-12",
+              "group": "espn_bet:moneyline:nba:phoenix_suns:utah_jazz:2024-11-12",
+              "market": "Moneyline",
+              "name": "Phoenix Suns",
+              "main": true,
+              "price": "-210",
+              "points": null,
+              "selection": "Away",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/8f02c147-257c-46b9-99a1-5631509ca31b",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpUXBITDBONUhLVld6UlErWEEwU3E3Qy80NVVNL2ViZ3VjL3c5eGM5WEllVWh1dmwyK0k5RUx5TUhLZlYxWm0wV0laNWREelloMFdnVSt3YVhzUW15UmhtbDBDd24zUENoS2RqVXpHR2E4Tno=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            },
+            {
+              "id": "espn_bet:moneyline:utah_jazz:nba:phoenix_suns:utah_jazz:2024-11-12",
+              "group": "espn_bet:moneyline:nba:phoenix_suns:utah_jazz:2024-11-12",
+              "market": "Moneyline",
+              "name": "Utah Jazz",
+              "main": true,
+              "price": "+180",
+              "points": null,
+              "selection": "Home",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/8f02c147-257c-46b9-99a1-5631509ca31b",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpUXBITDBONUhLVld6UlErWEEwU3E3Qy80NVVNL2ViZ3VjL3c5eGM5WEllVWh1dmwyK0k5RUx5TUhLZlYxWm0wV0IzR1hCMmhYVmFYUUVPaEl1MWE0NThyZXMxU0tZb1hrZEhvd1MxcDllS1g=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nba:dallas_mavericks:golden_state_warriors:2024-11-12",
+      "sport": "Basketball",
+      "league": "NBA",
+      "teams": {
+        "away": {
+          "id": "nba:dallas_mavericks",
+          "name": "Dallas Mavericks",
+          "abbreviation": "DAL"
+        },
+        "home": {
+          "id": "nba:golden_state_warriors",
+          "name": "Golden State Warriors",
+          "abbreviation": "GS"
+        }
+      },
+      "start": "2024-11-13T03:00:00",
+      "status": "Scheduled",
+      "live": false,
+      "tournament": "NBA Cup - Group Play",
+      "sportsbooks": [
+        {
+          "id": "espn_bet",
+          "name": "ESPN BET",
+          "odds": [
+            {
+              "id": "espn_bet:moneyline:dallas_mavericks:nba:dallas_mavericks:golden_state_warriors:2024-11-12",
+              "group": "espn_bet:moneyline:nba:dallas_mavericks:golden_state_warriors:2024-11-12",
+              "market": "Moneyline",
+              "name": "Dallas Mavericks",
+              "main": true,
+              "price": "-145",
+              "points": null,
+              "selection": "Away",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/775476db-0533-45dd-9a18-6b9d140c77f2",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpWmlXY1VTSDhYdnk4NGRJQjluRnk4ZWpMU0haNHFpT3J2eWlBNkFURTVuYWsxZUhVQlprOUI4LzRZR01BZ3RiUEtvWGh2OWJQY2JBektrZnVrWjlMZ1V0TURTblZ2UnNKVVBnQ1VWQWoxU090RUxNSi81ZWZNUDVMYmc4Y2lNaFJ3PT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            },
+            {
+              "id": "espn_bet:moneyline:golden_state_warriors:nba:dallas_mavericks:golden_state_warriors:2024-11-12",
+              "group": "espn_bet:moneyline:nba:dallas_mavericks:golden_state_warriors:2024-11-12",
+              "market": "Moneyline",
+              "name": "Golden State Warriors",
+              "main": true,
+              "price": "+125",
+              "points": null,
+              "selection": "Home",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/775476db-0533-45dd-9a18-6b9d140c77f2",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpWmlXY1VTSDhYdnk4NGRJQjluRnk4ZWpMU0haNHFpT3J2eWlBNkFURTVuYWsxZUhVQlprOUI4LzRZR01BZ3RiUEtvWGh2OWJQY2JBektrZnVrWjlMZ1hPOWJtblBKVC8wRVNPZjBqVld5QjNKdjJqMEJIOUdYZWJ2bWVTd3VVbmpyYnEvTXhUVWVzT0NHWVlONllISjdFPQ==",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nba:minnesota_timberwolves:portland_trail_blazers:2024-11-12",
+      "sport": "Basketball",
+      "league": "NBA",
+      "teams": {
+        "away": {
+          "id": "nba:minnesota_timberwolves",
+          "name": "Minnesota Timberwolves",
+          "abbreviation": "MIN"
+        },
+        "home": {
+          "id": "nba:portland_trail_blazers",
+          "name": "Portland Trail Blazers",
+          "abbreviation": "POR"
+        }
+      },
+      "start": "2024-11-13T03:00:00",
+      "status": "Scheduled",
+      "live": false,
+      "tournament": "NBA Cup - Group Play",
+      "sportsbooks": [
+        {
+          "id": "espn_bet",
+          "name": "ESPN BET",
+          "odds": [
+            {
+              "id": "espn_bet:moneyline:minnesota_timberwolves:nba:minnesota_timberwolves:portland_trail_blazers:2024-11-12",
+              "group": "espn_bet:moneyline:nba:minnesota_timberwolves:portland_trail_blazers:2024-11-12",
+              "market": "Moneyline",
+              "name": "Minnesota Timberwolves",
+              "main": true,
+              "price": "-300",
+              "points": null,
+              "selection": "Away",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/97b63aa2-c129-4132-8c2e-62cd7ad15946",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpWGJuRmlGbUxpczErRmRuZ2czaFNVak9mT3lLdmhiTmFVSXQrZzU4Q1RWNklsT2tBWVhZMUZ0OFFrOHNqdHhUVisxbUtnZkRBZzhnRDA1dHYxNVhLNGdNVWhLTXVybkFlV2hnQ1hac0IrR3VvdmxCN3V6T0YwckU5KzZpUThXSC9zemdEcFQwalIrSkdNdGF4MVc3MHVvPQ==",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            },
+            {
+              "id": "espn_bet:moneyline:portland_trail_blazers:nba:minnesota_timberwolves:portland_trail_blazers:2024-11-12",
+              "group": "espn_bet:moneyline:nba:minnesota_timberwolves:portland_trail_blazers:2024-11-12",
+              "market": "Moneyline",
+              "name": "Portland Trail Blazers",
+              "main": true,
+              "price": "+250",
+              "points": null,
+              "selection": "Home",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/97b63aa2-c129-4132-8c2e-62cd7ad15946",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpWGJuRmlGbUxpczErRmRuZ2czaFNVak9mT3lLdmhiTmFVSXQrZzU4Q1RWNklsT2tBWVhZMUZ0OFFrOHNqdHhUVisxbUtnZkRBZzhnRDA1dHYxNVhLNGdNVWhLTXVybkFlV2hnQ1hac0IrR3V2ajkzb2pZWDNjSkF5NlJNZkRUaW9ZSGlmcjMrVTgwUENmeTZuSG9RSnRjPQ==",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nba:detroit_pistons:toronto_raptors:2024-11-15",
+      "sport": "Basketball",
+      "league": "NBA",
+      "teams": {
+        "away": {
+          "id": "nba:detroit_pistons",
+          "name": "Detroit Pistons",
+          "abbreviation": "DET"
+        },
+        "home": {
+          "id": "nba:toronto_raptors",
+          "name": "Toronto Raptors",
+          "abbreviation": "TOR"
+        }
+      },
+      "start": "2024-11-16T00:00:00",
+      "status": "Scheduled",
+      "live": false,
+      "tournament": "NBA Cup - Group Play",
+      "sportsbooks": [
+        {
+          "id": "espn_bet",
+          "name": "ESPN BET",
+          "odds": [
+            {
+              "id": "espn_bet:moneyline:detroit_pistons:nba:detroit_pistons:toronto_raptors:2024-11-15",
+              "group": "espn_bet:moneyline:nba:detroit_pistons:toronto_raptors:2024-11-15",
+              "market": "Moneyline",
+              "name": "Detroit Pistons",
+              "main": true,
+              "price": "+160",
+              "points": null,
+              "selection": "Away",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/40162c50-a576-48fb-94cb-669e52e073c7",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpVE9UeDc4Z096MWc1cjBnTlFsb2N2bTVmQ1JBM0QrdS9UQmR5eXpITTgrRExrMmJlRWdMVml6UThUNzFOMWtoaGR4bnNJUU1uVDZ2ZHVIUGdLdUFBQUhJUndCZ0hqbWV0SVdrRFNwcmZrbU14L0hIRHlRYXVNSE1KTlhNYmxTS0x3PT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            },
+            {
+              "id": "espn_bet:moneyline:toronto_raptors:nba:detroit_pistons:toronto_raptors:2024-11-15",
+              "group": "espn_bet:moneyline:nba:detroit_pistons:toronto_raptors:2024-11-15",
+              "market": "Moneyline",
+              "name": "Toronto Raptors",
+              "main": true,
+              "price": "-190",
+              "points": null,
+              "selection": "Home",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/40162c50-a576-48fb-94cb-669e52e073c7",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpVE9UeDc4Z096MWc1cjBnTlFsb2N2bTVmQ1JBM0QrdS9UQmR5eXpITTgrRExrMmJlRWdMVml6UThUNzFOMWtoaGR4bnNJUU1uVDZ2ZHVIUGdLdUFBQUdRdEV0bjMwbjVDdmNFLzRQSGI5Wk5OK01GcjN5Q0lrb1pkbmVRSUVFd2JRPT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nba:miami_heat:indiana_pacers:2024-11-15",
+      "sport": "Basketball",
+      "league": "NBA",
+      "teams": {
+        "away": {
+          "id": "nba:miami_heat",
+          "name": "Miami Heat",
+          "abbreviation": "MIA"
+        },
+        "home": {
+          "id": "nba:indiana_pacers",
+          "name": "Indiana Pacers",
+          "abbreviation": "IND"
+        }
+      },
+      "start": "2024-11-16T00:00:00",
+      "status": "Scheduled",
+      "live": false,
+      "tournament": "NBA Cup - Group Play",
+      "sportsbooks": [
+        {
+          "id": "espn_bet",
+          "name": "ESPN BET",
+          "odds": [
+            {
+              "id": "espn_bet:moneyline:miami_heat:nba:miami_heat:indiana_pacers:2024-11-15",
+              "group": "espn_bet:moneyline:nba:miami_heat:indiana_pacers:2024-11-15",
+              "market": "Moneyline",
+              "name": "Miami Heat",
+              "main": true,
+              "price": "+135",
+              "points": null,
+              "selection": "Away",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/a5a8e422-9ed2-44c8-bb8a-ea3f24aca764",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpWEozbVJnRnRnb25aK3VOak5zVnhRNXNrQzZpVFFqNUplZDlFSzRxRWxINERZVHU1R3lpVXFSYVVpUG5icFU5WnBBQTFnSnQ3QzhUWkw3eUtQRUlZcmVuUURxSTBlWHpaLzRGdWVzdDFiQU8=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            },
+            {
+              "id": "espn_bet:moneyline:indiana_pacers:nba:miami_heat:indiana_pacers:2024-11-15",
+              "group": "espn_bet:moneyline:nba:miami_heat:indiana_pacers:2024-11-15",
+              "market": "Moneyline",
+              "name": "Indiana Pacers",
+              "main": true,
+              "price": "-155",
+              "points": null,
+              "selection": "Home",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/a5a8e422-9ed2-44c8-bb8a-ea3f24aca764",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpWEozbVJnRnRnb25aK3VOak5zVnhRNXNrQzZpVFFqNUplZDlFSzRxRWxINERZVHU1R3lpVXFSYVVpUG5icFU5WmtBd0QwNmtsdjRGOXE5d3J4VWtVL0dtdmw1SDYyK2g3OTBLMWxSTUVPalg=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nba:washington_wizards:atlanta_hawks:2024-11-15",
+      "sport": "Basketball",
+      "league": "NBA",
+      "teams": {
+        "away": {
+          "id": "nba:washington_wizards",
+          "name": "Washington Wizards",
+          "abbreviation": "WSH"
+        },
+        "home": {
+          "id": "nba:atlanta_hawks",
+          "name": "Atlanta Hawks",
+          "abbreviation": "ATL"
+        }
+      },
+      "start": "2024-11-16T00:30:00",
+      "status": "Scheduled",
+      "live": false,
+      "tournament": "NBA Cup - Group Play",
+      "sportsbooks": [
+        {
+          "id": "espn_bet",
+          "name": "ESPN BET",
+          "odds": [
+            {
+              "id": "espn_bet:moneyline:washington_wizards:nba:washington_wizards:atlanta_hawks:2024-11-15",
+              "group": "espn_bet:moneyline:nba:washington_wizards:atlanta_hawks:2024-11-15",
+              "market": "Moneyline",
+              "name": "Washington Wizards",
+              "main": true,
+              "price": "+220",
+              "points": null,
+              "selection": "Away",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/3c5aae50-d789-48b2-add3-c11665a60e61",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpVUhLZ3lyaXYrRUcrU0NjVjVxcFJTbVpZdHZmMTFESjIxV1R6RE5CdU9tMUs5VEowT1RpUTh3eTdKZkxWUW00TUV4OCtGWVhCU3VuNzIzQ1hONEttRWl5cnJSZHEvZVJzRWVzNG1hWldMWmZrc3B0Yi8zeWl0aktZT0J6OTFwcldRPT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            },
+            {
+              "id": "espn_bet:moneyline:atlanta_hawks:nba:washington_wizards:atlanta_hawks:2024-11-15",
+              "group": "espn_bet:moneyline:nba:washington_wizards:atlanta_hawks:2024-11-15",
+              "market": "Moneyline",
+              "name": "Atlanta Hawks",
+              "main": true,
+              "price": "-270",
+              "points": null,
+              "selection": "Home",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/3c5aae50-d789-48b2-add3-c11665a60e61",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpVUhLZ3lyaXYrRUcrU0NjVjVxcFJTbVpZdHZmMTFESjIxV1R6RE5CdU9tMUs5VEowT1RpUTh3eTdKZkxWUW00TUV4OCtGWVhCU3VuNzIzQ1hONEttRWlvUnlKMGwzREhuOE9EdmZFaTBtYjYwN3h0NEdRM1dseHk2NTRCaEhQZUdRPT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nba:chicago_bulls:cleveland_cavaliers:2024-11-15",
+      "sport": "Basketball",
+      "league": "NBA",
+      "teams": {
+        "away": {
+          "id": "nba:chicago_bulls",
+          "name": "Chicago Bulls",
+          "abbreviation": "CHI"
+        },
+        "home": {
+          "id": "nba:cleveland_cavaliers",
+          "name": "Cleveland Cavaliers",
+          "abbreviation": "CLE"
+        }
+      },
+      "start": "2024-11-16T00:30:00",
+      "status": "Scheduled",
+      "live": false,
+      "tournament": "NBA Cup - Group Play",
+      "sportsbooks": [
+        {
+          "id": "espn_bet",
+          "name": "ESPN BET",
+          "odds": [
+            {
+              "id": "espn_bet:moneyline:chicago_bulls:nba:chicago_bulls:cleveland_cavaliers:2024-11-15",
+              "group": "espn_bet:moneyline:nba:chicago_bulls:cleveland_cavaliers:2024-11-15",
+              "market": "Moneyline",
+              "name": "Chicago Bulls",
+              "main": true,
+              "price": "+250",
+              "points": null,
+              "selection": "Away",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/c989a5a5-e247-4dd2-ab5e-ca6142d37afa",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpZEFFS1lPRDdsUkxCWkd1V3VhdVlvalMvOXJhRWc5VjhyOTBtRzQ4N3Zud2Fndy90emhZTSs0bGlheDd5T2VCdUJBWGNQTnJvMkdiQjUwRE1nWnRIeVNqYkNTMG5CbHliVzJWZ2txZWdZK3JqaEkwQTNtMk82ZldqQkh5WFNrQ05RPT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            },
+            {
+              "id": "espn_bet:moneyline:cleveland_cavaliers:nba:chicago_bulls:cleveland_cavaliers:2024-11-15",
+              "group": "espn_bet:moneyline:nba:chicago_bulls:cleveland_cavaliers:2024-11-15",
+              "market": "Moneyline",
+              "name": "Cleveland Cavaliers",
+              "main": true,
+              "price": "-300",
+              "points": null,
+              "selection": "Home",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/c989a5a5-e247-4dd2-ab5e-ca6142d37afa",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpZEFFS1lPRDdsUkxCWkd1V3VhdVlvalMvOXJhRWc5VjhyOTBtRzQ4N3Zud2Fndy90emhZTSs0bGlheDd5T2VCdUJBWGNQTnJvMkdiQjUwRE1nWnRIeVRnUmxNV3BqUnVqUjY3eWhoZnBnSnFVQTYrRmhZQkM0aHZ3R0lHS2tGQmpRPT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nba:los_angeles_lakers:san_antonio_spurs:2024-11-15",
+      "sport": "Basketball",
+      "league": "NBA",
+      "teams": {
+        "away": {
+          "id": "nba:los_angeles_lakers",
+          "name": "Los Angeles Lakers",
+          "abbreviation": "LAL"
+        },
+        "home": {
+          "id": "nba:san_antonio_spurs",
+          "name": "San Antonio Spurs",
+          "abbreviation": "SA"
+        }
+      },
+      "start": "2024-11-16T00:30:00",
+      "status": "Scheduled",
+      "live": false,
+      "tournament": "NBA Cup - Group Play",
+      "sportsbooks": [
+        {
+          "id": "espn_bet",
+          "name": "ESPN BET",
+          "odds": [
+            {
+              "id": "espn_bet:moneyline:los_angeles_lakers:nba:los_angeles_lakers:san_antonio_spurs:2024-11-15",
+              "group": "espn_bet:moneyline:nba:los_angeles_lakers:san_antonio_spurs:2024-11-15",
+              "market": "Moneyline",
+              "name": "Los Angeles Lakers",
+              "main": true,
+              "price": "-115",
+              "points": null,
+              "selection": "Away",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/cd25d70e-a653-403a-9b36-56945fa40c9a",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpZk9teldDR2pzclRwQ0lZN3Y1ZE5keVZVaFVkcXFxSXNIWVBnN3NPV0dvS3JGajFuZ1g5MmR4bElGenllVFpkakFCaURDZXkyczhTQ240dHBieHArVnFVU2N0OGdCSWhuRFlQUGdLNGxtb0R2RHRaYkd6R3FqbGdEUjNFOWIvM3pRPT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            },
+            {
+              "id": "espn_bet:moneyline:san_antonio_spurs:nba:los_angeles_lakers:san_antonio_spurs:2024-11-15",
+              "group": "espn_bet:moneyline:nba:los_angeles_lakers:san_antonio_spurs:2024-11-15",
+              "market": "Moneyline",
+              "name": "San Antonio Spurs",
+              "main": true,
+              "price": "-105",
+              "points": null,
+              "selection": "Home",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/cd25d70e-a653-403a-9b36-56945fa40c9a",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpZk9teldDR2pzclRwQ0lZN3Y1ZE5keVZVaFVkcXFxSXNIWVBnN3NPV0dvS3JGajFuZ1g5MmR4bElGenllVFpkakFCaURDZXkyczhTQ240dHBieHArVm9MRTFaRnZpa0tWS2o4UExIRnY2ekp2TFh5aXRJSkNMVkMrbzdEZnRjbkxBPT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nba:phoenix_suns:oklahoma_city_thunder:2024-11-15",
+      "sport": "Basketball",
+      "league": "NBA",
+      "teams": {
+        "away": {
+          "id": "nba:phoenix_suns",
+          "name": "Phoenix Suns",
+          "abbreviation": "PHX"
+        },
+        "home": {
+          "id": "nba:oklahoma_city_thunder",
+          "name": "Oklahoma City Thunder",
+          "abbreviation": "OKC"
+        }
+      },
+      "start": "2024-11-16T01:00:00",
+      "status": "Scheduled",
+      "live": false,
+      "tournament": "NBA Cup - Group Play",
+      "sportsbooks": [
+        {
+          "id": "espn_bet",
+          "name": "ESPN BET",
+          "odds": [
+            {
+              "id": "espn_bet:moneyline:phoenix_suns:nba:phoenix_suns:oklahoma_city_thunder:2024-11-15",
+              "group": "espn_bet:moneyline:nba:phoenix_suns:oklahoma_city_thunder:2024-11-15",
+              "market": "Moneyline",
+              "name": "Phoenix Suns",
+              "main": true,
+              "price": "+170",
+              "points": null,
+              "selection": "Away",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/78662821-7f7b-42be-a44e-2849938f234d",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpUUF2dzl2dnhtbjdrYS9kUGZTcEtjcGp3aHRPTmdwNVoxSlIrcGlKMWF2ZFcxd2s0dDdCcFBERGgxdkZydms0NnVjb1EvYUpobTEwZlhPZFE4WUcyR3VtK3I2bElwQmNka25zNlg4b01JcjlDdnF5cENQQytPTjBuYlYzd1FHaWN3PT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            },
+            {
+              "id": "espn_bet:moneyline:oklahoma_city_thunder:nba:phoenix_suns:oklahoma_city_thunder:2024-11-15",
+              "group": "espn_bet:moneyline:nba:phoenix_suns:oklahoma_city_thunder:2024-11-15",
+              "market": "Moneyline",
+              "name": "Oklahoma City Thunder",
+              "main": true,
+              "price": "-200",
+              "points": null,
+              "selection": "Home",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/78662821-7f7b-42be-a44e-2849938f234d",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpUUF2dzl2dnhtbjdrYS9kUGZTcEtjcGp3aHRPTmdwNVoxSlIrcGlKMWF2ZFcxd2s0dDdCcFBERGgxdkZydms0NnVjb1EvYUpobTEwZlhPZFE4WUcyR3RyZGJsSGFQWjVaeXRDMmNrVWtPV2J0ZXFhUk5XeGxiY0FLYndZUXg3YXNnPT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nba:denver_nuggets:new_orleans_pelicans:2024-11-15",
+      "sport": "Basketball",
+      "league": "NBA",
+      "teams": {
+        "away": {
+          "id": "nba:denver_nuggets",
+          "name": "Denver Nuggets",
+          "abbreviation": "DEN"
+        },
+        "home": {
+          "id": "nba:new_orleans_pelicans",
+          "name": "New Orleans Pelicans",
+          "abbreviation": "NO"
+        }
+      },
+      "start": "2024-11-16T01:00:00",
+      "status": "Scheduled",
+      "live": false,
+      "tournament": "NBA Cup - Group Play",
+      "sportsbooks": [
+        {
+          "id": "espn_bet",
+          "name": "ESPN BET",
+          "odds": [
+            {
+              "id": "espn_bet:moneyline:denver_nuggets:nba:denver_nuggets:new_orleans_pelicans:2024-11-15",
+              "group": "espn_bet:moneyline:nba:denver_nuggets:new_orleans_pelicans:2024-11-15",
+              "market": "Moneyline",
+              "name": "Denver Nuggets",
+              "main": true,
+              "price": "+100",
+              "points": null,
+              "selection": "Away",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/84d45759-2d6a-4b80-af9c-53852d3e9288",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpWXAwRE9yQWFhZHpaY0VZMjVKcmxSWEJWMHR3WTR4VUkzeGN1U01tR1N3UzFCWVNNOFJKdHdYazRCVTJNd3docEJEZVdxWXY1MXJWYXkzUXJuK2lXVTIvNHk4dk5uOUl5TUVESTM3bDNLVWxscXR5NDVCVEFtNTJzZmw5cjFhVW13PT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            },
+            {
+              "id": "espn_bet:moneyline:new_orleans_pelicans:nba:denver_nuggets:new_orleans_pelicans:2024-11-15",
+              "group": "espn_bet:moneyline:nba:denver_nuggets:new_orleans_pelicans:2024-11-15",
+              "market": "Moneyline",
+              "name": "New Orleans Pelicans",
+              "main": true,
+              "price": "-120",
+              "points": null,
+              "selection": "Home",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/84d45759-2d6a-4b80-af9c-53852d3e9288",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpWXAwRE9yQWFhZHpaY0VZMjVKcmxSWEJWMHR3WTR4VUkzeGN1U01tR1N3UzFCWVNNOFJKdHdYazRCVTJNd3docEJEZVdxWXY1MXJWYXkzUXJuK2lXVTFhRUI1VWt1UklKelpvdHhUcExSbzNsRUhuZENtTGJkRFUwWmtFMXZ5WitnPT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nba:minnesota_timberwolves:sacramento_kings:2024-11-15",
+      "sport": "Basketball",
+      "league": "NBA",
+      "teams": {
+        "away": {
+          "id": "nba:minnesota_timberwolves",
+          "name": "Minnesota Timberwolves",
+          "abbreviation": "MIN"
+        },
+        "home": {
+          "id": "nba:sacramento_kings",
+          "name": "Sacramento Kings",
+          "abbreviation": "SAC"
+        }
+      },
+      "start": "2024-11-16T03:00:00",
+      "status": "Scheduled",
+      "live": false,
+      "tournament": "NBA Cup - Group Play",
+      "sportsbooks": [
+        {
+          "id": "espn_bet",
+          "name": "ESPN BET",
+          "odds": [
+            {
+              "id": "espn_bet:moneyline:minnesota_timberwolves:nba:minnesota_timberwolves:sacramento_kings:2024-11-15",
+              "group": "espn_bet:moneyline:nba:minnesota_timberwolves:sacramento_kings:2024-11-15",
+              "market": "Moneyline",
+              "name": "Minnesota Timberwolves",
+              "main": true,
+              "price": "-105",
+              "points": null,
+              "selection": "Away",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/168906fc-df18-44aa-be1e-1e128ad64c91",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpWGJuRmlGbUxpczErRmRuZ2czaFNVZ0dsR1VFcnRtSnl2b0hRbDhtV1orUU1nMlA1MXNLdW5Md3hCZ2tGTG1VUnJIZUFicUExU0NVblNOdExrOEJSaUtIcWw3OW5tL3hocUtHa2tBY3VsdVMwcXpFUmFTS3RRaHR3cVNZWUhnNXZ0elpkT0NvUXg5TndGbTJndW1zbVU4PQ==",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            },
+            {
+              "id": "espn_bet:moneyline:sacramento_kings:nba:minnesota_timberwolves:sacramento_kings:2024-11-15",
+              "group": "espn_bet:moneyline:nba:minnesota_timberwolves:sacramento_kings:2024-11-15",
+              "market": "Moneyline",
+              "name": "Sacramento Kings",
+              "main": true,
+              "price": "-115",
+              "points": null,
+              "selection": "Home",
+              "link": "https://espnbet.com/sport/basketball/organization/united-states/competition/nba/event/168906fc-df18-44aa-be1e-1e128ad64c91",
+              "sgp": null,
+              "grade": "MUU5U1ZadG5keVM0UExudGYrRVRpWGJuRmlGbUxpczErRmRuZ2czaFNVZ0dsR1VFcnRtSnl2b0hRbDhtV1orUU1nMlA1MXNLdW5Md3hCZ2tGTG1VUnJIZUFicUExU0NVblNOdExrOEJSaUtPYW9DTlJraDFRRUMxaXg5enpHUGtPTlRIUUVvOWhyN0gvOXppSzNQYTlnPT0=",
+              "players": [],
+              "updated": "2024-10-30T14:28:45"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
