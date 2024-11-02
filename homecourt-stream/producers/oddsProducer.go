@@ -72,7 +72,7 @@ func extractOddsMessages(response *OddsResponse) []OddsMessage {
 
 	for _, game := range response.Games {
 		// Parse the game start time
-		gameTime, err := time.Parse(time.RFC3339, game.Start)
+		gameTime, err := time.Parse("2006-01-02T15:04:05", game.Start)
 		if err != nil {
 			log.Printf("Error parsing game start time: %v", err)
 			continue
@@ -129,7 +129,6 @@ func HandleOdds(channel *amqp.Channel) {
 			log.Printf("failed to get odds from oddsblaze: %v", err)
 			continue
 		}
-		resp.Body.Close()
 
 		if resp.StatusCode != http.StatusOK {
 			log.Printf("unexpected status code %d for oddsblaze api", resp.StatusCode)
@@ -141,6 +140,7 @@ func HandleOdds(channel *amqp.Channel) {
 			log.Printf("can't read body from oddsblaze api response: %v", err)
 			continue
 		}
+		resp.Body.Close()
 
 		oddsResponse, err := parseOddsJSON(bodyBytes)
 		if err != nil {
