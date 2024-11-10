@@ -2,6 +2,7 @@ package receiver
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"log"
 
@@ -80,9 +81,18 @@ func Receiver(ctx context.Context) {
 		go func(queue string, messages <-chan amqp.Delivery) {
 			for d := range messages {
 				log.Printf(" [x] %s", d.Body)
-				// handle recieving func:
-				// 	- store to redis
-				//  - store to db
+
+				var parsedData map[string]interface{}
+				err := json.Unmarshal(d.Body, &parsedData)
+				if err != nil {
+					log.Printf("error parsing message from %s queue: %v", queue, err)
+					continue
+				}
+
+				// err = storeData(queue, parsedData)
+
+				// {"away_team":"Minnesota Timberwolves","home_team":"Sacramento Kings","start_time":"Saturday, Nov 16, 2024 at 3:00am","betting_prices":{"Minnesota Timberwolves":"-105","Sacramento Kings":"-115"}
+				d.Ack(false)
 			}
 		}(queueName, messages)
 	}
