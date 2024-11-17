@@ -38,7 +38,7 @@ type PlayerInjury struct {
 	Timestamp string `json:"timestamp"`
 }
 
-type PlayerTransfer struct {
+type Player struct {
 	PlayerID  string `json:"player_id"`
 	FromTeam  string `json:"from_team"`
 	ToTeam    string `json:"to_team"`
@@ -75,7 +75,7 @@ func main() {
 	log.Printf("homecourt_exchange declared successfully")
 
 	// Declare Queues and Bindings
-	queues := []string{"live_ticket_prices", "odds", "player_injuries", "player_transfers"}
+	queues := []string{"live_ticket_prices", "odds", "player_injuries", "roster"}
 	for _, queueName := range queues {
 		_, err := channel.QueueDeclare(
 			queueName, // name
@@ -102,6 +102,7 @@ func main() {
 	log.Println("producer started. waiting for tickers...")
 
 	go producers.HandleOdds(channel)
+	// go producers.HandleRoster()
 	log.Println("producer started. running in background...")
 	select {}
 

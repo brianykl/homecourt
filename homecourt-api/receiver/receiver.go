@@ -90,12 +90,17 @@ func Receiver(ctx context.Context) {
 				}
 
 				// err = storeData(queue, parsedData)
-
+				//
 				// {"away_team":"Minnesota Timberwolves","home_team":"Sacramento Kings","start_time":"Saturday, Nov 16, 2024 at 3:00am","betting_prices":{"Minnesota Timberwolves":"-105","Sacramento Kings":"-115"}
+
 				d.Ack(false)
 			}
 		}(queueName, messages)
 	}
 	<-ctx.Done()
 	log.Println("Receiver has been stopped")
+}
+
+func storeData(queue string, data map[string]interface{}) error {
+	panic("unimplemented")
 }
