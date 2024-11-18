@@ -75,7 +75,7 @@ func main() {
 	log.Printf("homecourt_exchange declared successfully")
 
 	// Declare Queues and Bindings
-	queues := []string{"live_ticket_prices", "odds", "player_injuries", "roster"}
+	queues := []string{"tickets", "odds", "injuries"}
 	for _, queueName := range queues {
 		_, err := channel.QueueDeclare(
 			queueName, // name

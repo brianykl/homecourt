@@ -6,6 +6,7 @@ import (
 	"fmt"
 
 	"github.com/playwright-community/playwright-go"
+	amqp "github.com/rabbitmq/amqp091-go"
 )
 
 type Player struct {
@@ -19,7 +20,18 @@ var teams = []string{
 	"hawks", "celtics", "nets",
 }
 
-func HandleRoster() {
+type InjuriesMessage struct {
+	Name string
+}
+
+func HandleInjuries(channel *amqp.Channel) {
+	printInjuryReport()
+	// pdf to text through gosseract
+	// text to json through openai
+	publishMessage(channel, "homecourt_exchange", "injuries", nil)
+}
+
+func printInjuryReport() {
 	pw, err := playwright.Run()
 
 	if err != nil {
@@ -50,9 +62,9 @@ func HandleRoster() {
 	}
 	log.Printf("created page")
 
-	team := "celtics"
-	url := "https://www.nba.com/" + team + "/roster"
-
+	// team := "celtics"
+	// url := "https://www.nba.com/" + team + "/roster"
+	url := "https://www.espn.com/nba/injuries"
 	// Navigate to the page
 	if _, err := page.Goto(url, playwright.PageGotoOptions{
 		WaitUntil: playwright.WaitUntilStateLoad,
@@ -68,7 +80,6 @@ func HandleRoster() {
 		maxTimeout        = 30000 // maximum total wait time in milliseconds
 	)
 
-	// JavaScript function to check DOM stability
 	script := fmt.Sprintf(`
 		() => {
 			return new Promise((resolve, reject) => {
@@ -99,33 +110,16 @@ func HandleRoster() {
 		}
 	`, stabilityDuration, maxTimeout, checkInterval)
 
-	// Wait for the DOM to stabilize
 	if _, err := page.WaitForFunction(script, nil); err != nil {
 		log.Fatalf("DOM did not stabilize: %v", err)
 	}
 
 	log.Println("DOM has stabilized; proceeding to capture content.")
 
-	log.Printf("finished waiting for dynamic content")
-
-	// Capture the HTML content
 	if _, err := page.PDF(playwright.PagePdfOptions{
 		Path: playwright.String("output.pdf"),
 	}); err != nil {
 		log.Fatalf("Failed to generate PDF: %v", err)
 	}
 
-	// html, err := page.Content()
-	// if err != nil {
-	// 	log.Fatalf("could not get page content: %v", err)
-	// }
-
-	// log.Println("HTML content fetched successfully!")
-	// log.Println(html) // This is the raw HTML you can send to GPT
-
-}
-
-// Helper function to trim text content
-func trimText(text string) string {
-	return text
 }
