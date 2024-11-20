@@ -114,7 +114,7 @@ func HandleOdds(channel *amqp.Channel) {
 		log.Fatal("ODDSBLAZEKEY hasn't been set")
 	}
 
-	ticker := time.NewTicker(8 * time.Second) // rate limit is 10 api calls per minute
+	ticker := time.NewTicker(10 * time.Second) // rate limit is 10 api calls per minute
 	defer ticker.Stop()
 
 	client := &http.Client{

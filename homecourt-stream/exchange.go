@@ -16,36 +16,6 @@ func failOnError(err error, msg string) {
 	}
 }
 
-// Data structures for dummy data
-type LiveTicketPrice struct {
-	TeamID    string  `json:"team_id"`
-	GameID    string  `json:"game_id"`
-	Price     float64 `json:"price"`
-	Currency  string  `json:"currency"`
-	Timestamp string  `json:"timestamp"`
-}
-
-type Odds struct {
-	GameID    string  `json:"game_id"`
-	Odds      float64 `json:"odds"`
-	Timestamp string  `json:"timestamp"`
-}
-
-type PlayerInjury struct {
-	PlayerID  string `json:"player_id"`
-	Status    string `json:"status"`
-	GameID    string `json:"game_id"`
-	Timestamp string `json:"timestamp"`
-}
-
-type Player struct {
-	PlayerID  string `json:"player_id"`
-	FromTeam  string `json:"from_team"`
-	ToTeam    string `json:"to_team"`
-	Status    string `json:"status"` // e.g., "signed", "waived"
-	Timestamp string `json:"timestamp"`
-}
-
 func main() {
 	// Connect to RabbitMQ
 	err := godotenv.Load(".env.local")
@@ -101,8 +71,10 @@ func main() {
 	log.Println("homecourt_exchange and queues set up successfully")
 	log.Println("producer started. waiting for tickers...")
 
+	go producers.HandleTickets(channel)
 	go producers.HandleOdds(channel)
-	// go producers.HandleRoster()
+	// go producers.HandleInjuries(channel)
+
 	log.Println("producer started. running in background...")
 	select {}
 

@@ -43,7 +43,7 @@ func Receiver(ctx context.Context) {
 	log.Printf("homecourt_exchange declared successfully")
 
 	// Declare Queues and Bindings
-	queues := []string{"live_ticket_prices", "odds", "player_injuries", "player_transfers"}
+	queues := []string{"tickets", "odds", "injuries"}
 	for _, queueName := range queues {
 		_, err := channel.QueueDeclare(
 			queueName, // name
@@ -69,7 +69,7 @@ func Receiver(ctx context.Context) {
 		messages, err := channel.Consume(
 			queueName,
 			queueName,
-			true,
+			false,
 			false,
 			false,
 			false,
