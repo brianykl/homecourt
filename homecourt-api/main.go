@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"homecourt-api/games"
 	"homecourt-api/receiver"
 	"log"
 	"net/http"
@@ -29,6 +30,8 @@ func main() {
 		}
 	}()
 
+	gamesManager, err := games.NewGamesManager(":6379")
+	receiver.Manager = gamesManager
 	// Listen for OS signals
 	sigs := make(chan os.Signal, 1)
 	signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
