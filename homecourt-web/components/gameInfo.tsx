@@ -47,7 +47,7 @@ const GameInfo: React.FC<GameInfoProps> = ({
         />
       </div>
 
-      {/* Game Details */}
+      {/* event details */}
       <div className="ml-4 flex-1">
         <h2 className="text-xl font-bold">
           {team} vs {opponent}
@@ -58,12 +58,24 @@ const GameInfo: React.FC<GameInfoProps> = ({
         <p className="text-gray-600">
           <strong>Venue:</strong> {venue}
         </p>
-        <p className="text-gray-600">
-          <strong>Win Odds:</strong> {winOdds}%
-        </p>
-        <p className="text-gray-600">
-          <strong>Injured Players:</strong> {injuredPlayers.join(", ")}
-        </p>
+      </div>
+      {/* odds */}
+      <div className="flex-1">
+        <h3 className="text-xl font-bold">
+          $30
+        </h3>
+      </div>
+      {/* odds */}
+      <div className="flex-1">
+        <h3 className="text-xl font-bold">
+          ~{winOdds}% to win
+        </h3>
+      </div>
+      {/* injuries*/}
+      <div className=" flex-1">
+        <h3 className="text-xl font-bold">
+          Kevin Durant
+        </h3>
       </div>
     </div>
   );

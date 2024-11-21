@@ -28,7 +28,6 @@ func GetHandler(w http.ResponseWriter, r *http.Request) {
 
 	team := req.Team
 
-	// Fetch the keys of the 5 upcoming games
 	upcomingGamesKeys, err := Manager.GetUpcomingGames(context.Background(), team, 5)
 	if err != nil {
 		http.Error(w, "failed to fetch upcoming games", http.StatusInternalServerError)
@@ -37,7 +36,6 @@ func GetHandler(w http.ResponseWriter, r *http.Request) {
 
 	var games []map[string]string
 
-	// Fetch details for each game
 	for _, gameKey := range upcomingGamesKeys {
 		gameData, err := Manager.GetGame(context.Background(), gameKey)
 		if err != nil {

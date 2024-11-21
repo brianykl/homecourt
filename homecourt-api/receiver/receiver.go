@@ -176,7 +176,7 @@ func storeData(ctx context.Context, queue string, data map[string]interface{}) e
 			return err
 		}
 
-		zsetKey := fmt.Sprintf("team:%s:upcoming_home_games", homeTeam)
+		zsetKey := fmt.Sprintf("team:%s:upcoming_home_games", TeamAbbreviation[homeTeam])
 		gameTime, _ := time.Parse(time.RFC3339, startTime)
 		score := gameTime.Unix()
 		err = Manager.AddUpcomingGame(ctx, zsetKey, gameID, score)
