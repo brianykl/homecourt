@@ -30,7 +30,10 @@ func main() {
 		}
 	}()
 
-	gamesManager, err := games.NewGamesManager(":6379")
+	gamesManager, err := games.NewGamesManager("localhost:6379")
+	if err != nil {
+		log.Fatalf("could not connect to redis: %v", err)
+	}
 	receiver.Manager = gamesManager
 	// Listen for OS signals
 	sigs := make(chan os.Signal, 1)

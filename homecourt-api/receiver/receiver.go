@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"homecourt-api/games"
 	"log"
+	"regexp"
 	"strings"
 	"time"
 
@@ -111,65 +112,66 @@ func Receiver(ctx context.Context) {
 var Manager games.GamesManager
 
 var TeamAbbreviation = map[string]string{
-	"Atlanta Hawks":          "ATL",
-	"Boston Celtics":         "BOS",
-	"Brooklyn Nets":          "BKN",
-	"Charlotte Hornets":      "CHA",
-	"Chicago Bulls":          "CHI",
-	"Cleveland Cavaliers":    "CLE",
-	"Dallas Mavericks":       "DAL",
-	"Denver Nuggets":         "DEN",
-	"Detroit Pistons":        "DET",
-	"Golden State Warriors":  "GSW",
-	"Houston Rockets":        "HOU",
-	"Indiana Pacers":         "IND",
-	"Los Angeles Clippers":   "LAC",
-	"Los Angeles Lakers":     "LAL",
-	"Memphis Grizzlies":      "MEM",
-	"Miami Heat":             "MIA",
-	"Milwaukee Bucks":        "MIL",
-	"Minnesota Timberwolves": "MIN",
-	"New Orleans Pelicans":   "NOP",
-	"New York Knicks":        "NYK",
-	"Oklahoma City Thunder":  "OKC",
-	"Orlando Magic":          "ORL",
-	"Philadelphia 76ers":     "PHI",
-	"Phoenix Suns":           "PHX",
-	"Portland Trail Blazers": "POR",
-	"Sacramento Kings":       "SAC",
-	"San Antonio Spurs":      "SAS",
-	"Toronto Raptors":        "TOR",
-	"Utah Jazz":              "UTA",
-	"Washington Wizards":     "WAS",
+	"atlanta hawks":          "ATL",
+	"boston celtics":         "BOS",
+	"brooklyn nets":          "BKN",
+	"charlotte hornets":      "CHA",
+	"chicago bulls":          "CHI",
+	"cleveland cavaliers":    "CLE",
+	"dallas mavericks":       "DAL",
+	"denver nuggets":         "DEN",
+	"detroit pistons":        "DET",
+	"golden state warriors":  "GSW",
+	"houston rockets":        "HOU",
+	"indiana pacers":         "IND",
+	"los angeles clippers":   "LAC",
+	"la clippers":            "LAC",
+	"la lakers":              "LAL",
+	"los angeles lakers":     "LAL",
+	"memphis grizzlies":      "MEM",
+	"miami heat":             "MIA",
+	"milwaukee bucks":        "MIL",
+	"minnesota timberwolves": "MIN",
+	"new orleans pelicans":   "NOP",
+	"new york knicks":        "NYK",
+	"oklahoma city thunder":  "OKC",
+	"orlando magic":          "ORL",
+	"philadelphia 76ers":     "PHI",
+	"phoenix suns":           "PHX",
+	"portland trail blazers": "POR",
+	"sacramento kings":       "SAC",
+	"san antonio spurs":      "SAS",
+	"toronto raptors":        "TOR",
+	"utah jazz":              "UTA",
+	"washington wizards":     "WAS",
 }
 
 func storeData(ctx context.Context, queue string, data map[string]interface{}) error {
 	switch queue {
 	case "tickets":
 		eventName := data["event_name"].(string)
-		teams := strings.Split(eventName, " vs ")
-		if len(teams) != 2 {
-			return fmt.Errorf("unexpected event name format")
+		homeTeam, awayTeam, err := extractTeams(eventName)
+		if err != nil {
+			return fmt.Errorf("could not extract home team & away team out of tickets message: %v", err)
 		}
-		homeTeam := TeamAbbreviation[teams[0]]
-		awayTeam := TeamAbbreviation[teams[1]]
+
 		venueName := data["venue_name"].(string)
 		date, _ := time.Parse(time.RFC3339, data["start_date_time"].(string))
 		formattedDate := date.Format("01.02.2006")
 		startTime := data["start_date_time"].(string)
 		lowestTicketPrice := fmt.Sprintf("$%.2f", data["min_ticket_price"].(float64))
 
-		gameID := fmt.Sprintf("%s_%s_%s", homeTeam, awayTeam, formattedDate)
+		gameID := fmt.Sprintf("%s %s %s", TeamAbbreviation[homeTeam], TeamAbbreviation[awayTeam], formattedDate)
 		gameKey := fmt.Sprintf("game:%s", gameID)
 
 		fields := map[string]interface{}{
-			"home_team":           homeTeam,
-			"away_team":           awayTeam,
+			"home_team":           TeamAbbreviation[homeTeam],
+			"away_team":           TeamAbbreviation[awayTeam],
 			"venueName":           venueName,
 			"start_time":          startTime,
 			"lowest_ticket_price": lowestTicketPrice,
 		}
-		err := Manager.CreateOrUpdateGame(ctx, gameKey, fields)
+		err = Manager.CreateOrUpdateGame(ctx, gameKey, fields)
 		if err != nil {
 			return err
 		}
@@ -182,11 +184,68 @@ func storeData(ctx context.Context, queue string, data map[string]interface{}) e
 			return err
 		}
 	case "odds":
-		panic("unimplemented")
+		// {"away_team":"Minnesota Timberwolves","home_team":"Sacramento Kings","start_time":"Saturday, Nov 16, 2024 at 3:00am","betting_prices":{"Minnesota Timberwolves":"-105","Sacramento Kings":"-115"}
+		homeTeam := TeamAbbreviation[strings.ToLower(data["home_team"].(string))]
+		awayTeam := TeamAbbreviation[strings.ToLower(data["away_team"].(string))]
+		date, _ := time.Parse(time.RFC3339, data["start_time"].(string))
+		formattedDate := date.Format("01.02.2006")
+		odds := data["betting_prices"].(map[string]interface{})
+		homeTeamOdds := odds[data["home_team"].(string)].(string)
+
+		gameID := fmt.Sprintf("%s %s %s", TeamAbbreviation[homeTeam], TeamAbbreviation[awayTeam], formattedDate)
+		gameKey := fmt.Sprintf("game:%s", gameID)
+
+		exists, err := Manager.GameExists(ctx, gameKey)
+		if err != nil {
+			return fmt.Errorf("error checking game existence: %v", err)
+		}
+		if !exists {
+			return nil
+		}
+
+		fields := map[string]interface{}{
+			"home_team":      TeamAbbreviation[homeTeam],
+			"away_team":      TeamAbbreviation[awayTeam],
+			"home_team_odds": homeTeamOdds,
+		}
+
+		err = Manager.CreateOrUpdateGame(ctx, gameKey, fields)
+		if err != nil {
+			return err
+		}
+
 	case "injuries":
 		panic("unimplemented")
+
 	default:
 		return fmt.Errorf("unknown queue: %s", queue)
 	}
+
 	return nil
+}
+
+func extractTeams(eventName string) (homeTeam, awayTeam string, err error) {
+	reg := regexp.MustCompile(`[^a-z0-9\s]+`)
+	normalizedEvent := reg.ReplaceAllString(strings.ToLower(eventName), "")
+
+	words := strings.Fields(normalizedEvent)
+
+	var matchedTeams []string
+	for i := 0; i < len(words); i++ {
+		for j := i + 1; j <= len(words); j++ {
+			potentialTeam := strings.Join(words[i:j], " ")
+			if _, exists := TeamAbbreviation[potentialTeam]; exists {
+				matchedTeams = append(matchedTeams, potentialTeam)
+				i = j - 1
+				break
+			}
+		}
+	}
+
+	// Ensure exactly two teams were matched
+	if len(matchedTeams) != 2 {
+		return "", "", fmt.Errorf("could not extract exactly two teams from event: %s", eventName)
+	}
+
+	return matchedTeams[0], matchedTeams[1], nil
 }

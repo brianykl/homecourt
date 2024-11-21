@@ -29,6 +29,7 @@ type GamesManager interface {
 	CreateOrUpdateGame(ctx context.Context, gameKey string, fields map[string]interface{}) error
 	AddUpcomingGame(ctx context.Context, zsetKey, gameID string, score int64) error
 	GetUpcomingGames(ctx context.Context, teamID string, count int64) ([]string, error)
+	GameExists(ctx context.Context, gameID string) (bool, error)
 	GetGame(ctx context.Context, gameID string) (map[string]string, error)
 	RemovePastGames(ctx context.Context, teamID string) error
 
@@ -68,6 +69,20 @@ func (r *redisGamesManager) CreateOrUpdateGame(ctx context.Context, gameKey stri
 		return fmt.Errorf("failed to create or update game %s: %v", gameKey, err)
 	}
 	return nil
+}
+
+func (r *redisGamesManager) GameExists(ctx context.Context, gameID string) (bool, error) {
+	// Use the game ID to construct the Redis key
+	gameKey := fmt.Sprintf("game:%s", gameID)
+
+	// Check if the key exists in Redis
+	exists, err := r.client.Exists(ctx, gameKey).Result()
+	if err != nil {
+		return false, fmt.Errorf("failed to check game existence: %v", err)
+	}
+
+	// Redis EXISTS returns 1 if the key exists, 0 otherwise
+	return exists > 0, nil
 }
 
 func (r *redisGamesManager) AddUpcomingGame(ctx context.Context, zsetKey, gameID string, score int64) error {

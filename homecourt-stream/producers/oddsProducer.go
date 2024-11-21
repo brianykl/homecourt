@@ -77,7 +77,7 @@ func extractOddsMessages(response *OddsResponse) []OddsMessage {
 			log.Printf("Error parsing game start time: %v", err)
 			continue
 		}
-		formattedStartTime := gameTime.Format("Monday, Jan 2, 2006 at 3:04pm")
+		formattedStartTime := gameTime.Format(time.RFC3339)
 
 		// Initialize the OddsMessage
 		message := OddsMessage{
