@@ -27,7 +27,6 @@ func GetHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	team := req.Team
-
 	upcomingGamesKeys, err := Manager.GetUpcomingGames(context.Background(), team, 5)
 	if err != nil {
 		http.Error(w, "failed to fetch upcoming games", http.StatusInternalServerError)

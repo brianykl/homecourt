@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"homecourt-api/games"
+	"homecourt-api/handlers"
 	"homecourt-api/receiver"
 	"log"
 	"net/http"
@@ -18,11 +19,15 @@ func main() {
 	if err != nil {
 		log.Fatalf("err loading: %v", err)
 	}
+	gamesManager, err := games.NewGamesManager("localhost:6379")
+	receiver.Manager = gamesManager
+	handlers.Manager = gamesManager
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
 	go receiver.Receiver(ctx)
 
 	server := &http.Server{Addr: ":8080"}
+	http.HandleFunc("/get", handlers.GetHandler)
 	go func() {
 		log.Println("Starting HTTP server on :8080")
 		if err := server.ListenAndServe(); err != http.ErrServerClosed {
@@ -30,11 +35,10 @@ func main() {
 		}
 	}()
 
-	gamesManager, err := games.NewGamesManager("localhost:6379")
 	if err != nil {
 		log.Fatalf("could not connect to redis: %v", err)
 	}
-	receiver.Manager = gamesManager
+
 	// Listen for OS signals
 	sigs := make(chan os.Signal, 1)
 	signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
