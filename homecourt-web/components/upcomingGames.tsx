@@ -1,11 +1,17 @@
+// components/UpcomingGames.tsx
+"use client";
+import React, { useState, useEffect } from "react";
 import GameInfo from "./gameInfo";
 
 interface Game {
-  opponent: string; // The team you are playing against
-  winOdds: number; // Probability of your team winning (e.g., 75 for 75%)
-  dateTime: string; // Date and time of the game (ISO string or formatted date)
-  venue: string; // Location of the game
-  injuredPlayers: string[]; // List of injured players from both teams
+  opponent: string;
+  dateTime: string;
+  venue: string;
+  lowestTicketPrice: string;
+  homeTeam: string;
+  awayTeam: string;
+  winOdds?: number; // Optional, as it's not in the API response
+  injuredPlayers?: string[]; // Optional, as it's not in the API response
 }
 
 export default function UpcomingGames({ team }: { team: string }) {
@@ -42,85 +48,123 @@ export default function UpcomingGames({ team }: { team: string }) {
     "Washington Wizards": "wizards.svg",
   };
 
-  // want to make our api call to backend redis to get latest game info
-  // should be able go give team, and then get back information about upcoming five home games
-//   const upcomingGameInfo = await fetch("http://localhost:8080/some_api");
-  const mockUpcomingGames: Game[] = [
-    {
-      opponent: "Los Angeles Lakers",
-      winOdds: 65,
-      dateTime: "2024-11-05T19:30:00",
-      venue: "Staples Center",
-      injuredPlayers: [
-        "LeBron James (Lakers)",
-        "Anthony Davis (Lakers)",
-        "Luka Doncic (Mavericks)",
-      ],
-    },
-    {
-      opponent: "Boston Celtics",
-      winOdds: 70,
-      dateTime: "2024-11-07T20:00:00",
-      venue: "Staples Center",
-      injuredPlayers: [
-        "Jayson Tatum (Celtics)",
-        "Jaylen Brown (Celtics)",
-        "Kyrie Irving (Nets)",
-      ],
-    },
-    {
-      opponent: "Chicago Bulls",
-      winOdds: 80,
-      dateTime: "2024-11-10T18:00:00",
-      venue: "Staples Center",
-      injuredPlayers: [
-        "Zach LaVine (Bulls)",
-        "Nikola Vucevic (Bulls)",
-        "Jimmy Butler (Heat)",
-      ],
-    },
-    {
-      opponent: "Miami Heat",
-      winOdds: 60,
-      dateTime: "2024-11-12T19:00:00",
-      venue: "Staples Center",
-      injuredPlayers: [
-        "Bam Adebayo (Heat)",
-        "Tyler Herro (Heat)",
-        "Kawhi Leonard (Clippers)",
-      ],
-    },
-    {
-      opponent: "Golden State Warriors",
-      winOdds: 55,
-      dateTime: "2024-11-15T21:00:00",
-      venue: "Staples Center",
-      injuredPlayers: [
-        "Stephen Curry (Warriors)",
-        "Klay Thompson (Warriors)",
-        "Draymond Green (Warriors)",
-      ],
-    },
-  ];
+  // Map of team abbreviations to full names
+  const teamAbbreviations: Record<string, string> = {
+    ATL: "Atlanta Hawks",
+    BOS: "Boston Celtics",
+    BKN: "Brooklyn Nets",
+    CHA: "Charlotte Hornets",
+    CHI: "Chicago Bulls",
+    CLE: "Cleveland Cavaliers",
+    DAL: "Dallas Mavericks",
+    DEN: "Denver Nuggets",
+    DET: "Detroit Pistons",
+    GSW: "Golden State Warriors",
+    HOU: "Houston Rockets",
+    IND: "Indiana Pacers",
+    LAC: "LA Clippers",
+    LAL: "Los Angeles Lakers",
+    MEM: "Memphis Grizzlies",
+    MIA: "Miami Heat",
+    MIL: "Milwaukee Bucks",
+    MIN: "Minnesota Timberwolves",
+    NOP: "New Orleans Pelicans",
+    NYK: "New York Knicks",
+    OKC: "Oklahoma City Thunder",
+    ORL: "Orlando Magic",
+    PHI: "Philadelphia 76ers",
+    PHX: "Phoenix Suns",
+    POR: "Portland Trail Blazers",
+    SAC: "Sacramento Kings",
+    SAS: "San Antonio Spurs",
+    TOR: "Toronto Raptors",
+    UTA: "Utah Jazz",
+    WAS: "Washington Wizards",
+  };
+
+  const [games, setGames] = useState<Game[]>([]);
+
+  // Function to fetch games data
+  const fetchGames = async () => {
+    try {
+      const response = await fetch("http://localhost:8080/get", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ Team: team }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch games");
+      }
+
+      const data = await response.json();
+      // data.games is an array of game objects
+
+      // Map API data to our Game interface
+      const mappedGames: Game[] = data.games.map((gameData: any) => {
+        const homeTeamAbbr = gameData.home_team;
+        const awayTeamAbbr = gameData.away_team;
+
+        const homeTeamFullName =
+          teamAbbreviations[homeTeamAbbr] || homeTeamAbbr;
+        const awayTeamFullName =
+          teamAbbreviations[awayTeamAbbr] || awayTeamAbbr;
+
+        // Determine opponent based on whether the team is home or away
+        const opponent =
+          team === homeTeamAbbr ? awayTeamFullName : homeTeamFullName;
+
+        return {
+          opponent: opponent,
+          dateTime: gameData.start_time,
+          venue: gameData.venueName,
+          lowestTicketPrice: gameData.lowest_ticket_price,
+          homeTeam: homeTeamFullName,
+          awayTeam: awayTeamFullName,
+          // winOdds and injuredPlayers can be added if available
+        };
+      });
+
+      setGames(mappedGames);
+    } catch (error) {
+      console.error("Error fetching games:", error);
+    }
+  };
+
+  useEffect(() => {
+    // Fetch games when component mounts
+    fetchGames();
+
+    // Set up interval to fetch games every minute
+    const interval = setInterval(() => {
+      fetchGames();
+    }, 60000); // 60000 ms = 1 minute
+
+    // Cleanup interval on component unmount
+    return () => clearInterval(interval);
+  }, [team]);
 
   return (
     <div className="flex flex-col justify-center">
-      {mockUpcomingGames.map((game) => {
-        const opponentLogo = teamToLogo[game.opponent] || "default-logo.svg"; // Provide a default logo if not found
+      {games.map((game) => {
+        const opponentLogo = teamToLogo[game.opponent] || "default-logo.svg";
 
         return (
           <GameInfo
-            key={`${game.opponent}-${game.dateTime}`} // Use a unique key
-            team={team}
+            key={`${game.opponent}-${game.dateTime}`}
+            team={teamAbbreviations[team] || team}
             opponent={game.opponent}
-            winOdds={game.winOdds}
             dateTime={game.dateTime}
             venue={game.venue}
-            injuredPlayers={game.injuredPlayers}
             opponentLogo={opponentLogo}
+            lowestTicketPrice={game.lowestTicketPrice}
+            // winOdds and injuredPlayers can be passed if available
           />
         );
       })}
     </div>
   );
 }
+

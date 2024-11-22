@@ -3,16 +3,53 @@ package main
 import (
 	"bytes"
 	"context"
+	"fmt"
 	"io"
 	"log"
 	"net/http"
 	"os"
+	"strings"
 	"time"
 
 	ics "github.com/arran4/golang-ical"
 	"github.com/joho/godotenv"
 	"github.com/redis/go-redis/v9"
 )
+
+var TeamAbbreviation = map[string]string{
+	"Atlanta Hawks":          "ATL",
+	"Boston Celtics":         "BOS",
+	"Brooklyn Nets":          "BKN",
+	"Charlotte Hornets":      "CHA",
+	"Chicago Bulls":          "CHI",
+	"Cleveland Cavaliers":    "CLE",
+	"Dallas Mavericks":       "DAL",
+	"Denver Nuggets":         "DEN",
+	"Detroit Pistons":        "DET",
+	"Golden State Warriors":  "GSW",
+	"Houston Rockets":        "HOU",
+	"Indiana Pacers":         "IND",
+	"Los Angeles Clippers":   "LAC",
+	"LA Clippers":            "LAC",
+	"LA Lakers":              "LAL",
+	"Los Angeles Lakers":     "LAL",
+	"Memphis Grizzlies":      "MEM",
+	"Miami Heat":             "MIA",
+	"Milwaukee Bucks":        "MIL",
+	"Minnesota Timberwolves": "MIN",
+	"New Orleans Pelicans":   "NOP",
+	"New York Knicks":        "NYK",
+	"Oklahoma City Thunder":  "OKC",
+	"Orlando Magic":          "ORL",
+	"Philadelphia 76ers":     "PHI",
+	"Phoenix Suns":           "PHX",
+	"Portland Trail Blazers": "POR",
+	"Sacramento Kings":       "SAC",
+	"San Antonio Spurs":      "SAS",
+	"Toronto Raptors":        "TOR",
+	"Utah Jazz":              "UTA",
+	"Washington Wizards":     "WAS",
+}
 
 func main() {
 	err := godotenv.Load(".env.local")
@@ -72,16 +109,46 @@ func main() {
 	for _, event := range calendar.Events() {
 		summary := event.GetProperty(ics.ComponentPropertySummary).Value
 		startTime := event.GetProperty(ics.ComponentPropertyDtStart).Value
-		endTime := event.GetProperty(ics.ComponentPropertyDtEnd).Value
 		location := event.GetProperty(ics.ComponentPropertyLocation).Value
-		startTimeParsed, err := time.Parse("20060102T150405Z", startTime)
+
+		cleanSummary := strings.TrimSpace(strings.TrimPrefix(summary, "🏀"))
+		teams := strings.Split(cleanSummary, "@")
+		if len(teams) != 2 {
+			log.Fatalf("unexpected format: %s", summary)
+			continue
+		}
+
+		awayTeam := strings.TrimSpace(teams[0])
+		homeTeam := strings.TrimSpace(teams[1])
+
+		datetimeLayout := "20060102T150405Z"
+		date, err := time.Parse(datetimeLayout, startTime)
+		formattedDate := date.Format("01.02.2006")
+		time, err := time.Parse(datetimeLayout, startTime)
+		formattedTime := time.Format("Jan 2, 2006")
+
 		if err != nil {
 			log.Printf("Failed to parse start time '%s': %v", startTime, err)
 			continue
 		}
+
+		gameKey := fmt.Sprintf("game:%s %s %s", TeamAbbreviation[homeTeam], TeamAbbreviation[awayTeam], formattedDate)
+		fields := map[string]interface{}{
+			"home_team":  TeamAbbreviation[homeTeam],
+			"away_team":  TeamAbbreviation[awayTeam],
+			"venueName":  location,
+			"start_time": formattedTime,
+		}
+		err = redisClient.HSet(ctx, gameKey, fields).Err()
+		if err != nil {
+			log.Printf("failed to create or update game %s: %v", gameKey, err)
+			continue
+		}
+		log.Printf("stored game: %s", gameKey)
 	}
 	// define types for what im storing in redis
 	// parse and store into redis
 	// can consider flushing redis each time we do this
 	// end script
+	log.Printf("finished loading games from schedule")
 }

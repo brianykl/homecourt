@@ -33,6 +33,7 @@ homecourt-web/yarn-error.log*
 homecourt-web/.env*
 homecourt-api/.env*
 homecourt-stream/.env*
+homecourt-init/.env*
 
 # vercel
 homecourt-web/.vercel

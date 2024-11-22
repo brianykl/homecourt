@@ -184,35 +184,65 @@ func storeData(ctx context.Context, queue string, data map[string]interface{}) e
 			return err
 		}
 	case "odds":
-		// {"away_team":"Minnesota Timberwolves","home_team":"Sacramento Kings","start_time":"Saturday, Nov 16, 2024 at 3:00am","betting_prices":{"Minnesota Timberwolves":"-105","Sacramento Kings":"-115"}
-		homeTeam := TeamAbbreviation[strings.ToLower(data["home_team"].(string))]
-		awayTeam := TeamAbbreviation[strings.ToLower(data["away_team"].(string))]
-		date, _ := time.Parse(time.RFC3339, data["start_time"].(string))
-		formattedDate := date.Format("01.02.2006")
-		odds := data["betting_prices"].(map[string]interface{})
-		homeTeamOdds := odds[data["home_team"].(string)].(string)
+		// Extract and normalize team names
+		homeTeamName := strings.ToLower(data["home_team"].(string))
+		awayTeamName := strings.ToLower(data["away_team"].(string))
 
-		gameID := fmt.Sprintf("%s %s %s", TeamAbbreviation[homeTeam], TeamAbbreviation[awayTeam], formattedDate)
+		// Map team names to abbreviations
+		homeTeamAbbr, ok := TeamAbbreviation[homeTeamName]
+		if !ok {
+			log.Printf("Unknown home team: %s", homeTeamName)
+			return fmt.Errorf("unknown home team")
+		}
+
+		awayTeamAbbr, ok := TeamAbbreviation[awayTeamName]
+		if !ok {
+			log.Printf("Unknown away team: %s", awayTeamName)
+			return fmt.Errorf("unknown away team")
+		}
+
+		// Parse the date
+		dateStr := data["start_time"].(string)
+		date, err := time.Parse(time.RFC3339, dateStr)
+		if err != nil {
+			log.Printf("Error parsing date '%s': %v", dateStr, err)
+			return fmt.Errorf("invalid date format")
+		}
+		formattedDate := date.Format("01.02.2006")
+
+		// Extract odds
+		odds := data["betting_prices"].(map[string]interface{})
+		homeTeamOddsStr, ok := odds[data["home_team"].(string)].(string)
+		if !ok {
+			log.Printf("Odds not found for home team: %s", data["home_team"].(string))
+			return fmt.Errorf("odds not found for home team")
+		}
+
+		// Construct the game ID and key
+		gameID := fmt.Sprintf("%s %s %s", homeTeamAbbr, awayTeamAbbr, formattedDate)
 		gameKey := fmt.Sprintf("game:%s", gameID)
 
+		// Check if the game exists
 		exists, err := Manager.GameExists(ctx, gameKey)
 		if err != nil {
 			return fmt.Errorf("error checking game existence: %v", err)
 		}
 		if !exists {
+			log.Printf("Game %s does not exist", gameID)
 			return nil
 		}
 
+		// Update the game with odds
 		fields := map[string]interface{}{
-			"home_team":      TeamAbbreviation[homeTeam],
-			"away_team":      TeamAbbreviation[awayTeam],
-			"home_team_odds": homeTeamOdds,
+			"home_team_odds": homeTeamOddsStr,
 		}
 
 		err = Manager.CreateOrUpdateGame(ctx, gameKey, fields)
 		if err != nil {
+			log.Printf("Failed to update game: %v", err)
 			return err
 		}
+		log.Printf("Odds updated for game %s", gameID)
 
 	case "injuries":
 		panic("unimplemented")

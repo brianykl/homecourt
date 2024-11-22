@@ -6,34 +6,36 @@ import Image from "next/image";
 interface GameInfoProps {
   team: string;
   opponent: string;
-  winOdds: number;
   dateTime: string;
   venue: string;
-  injuredPlayers: string[];
   opponentLogo: string;
+  lowestTicketPrice: string;
+  winOdds?: number;
+  injuredPlayers?: string[];
 }
 
 const GameInfo: React.FC<GameInfoProps> = ({
   team,
   opponent,
-  winOdds,
   dateTime,
   venue,
-  injuredPlayers,
   opponentLogo,
+  lowestTicketPrice,
+  winOdds,
+  injuredPlayers,
 }) => {
   // Format the date and time for better readability
-  const formattedDate = new Date(dateTime).toLocaleDateString("en-US", {
+  const date = new Date(dateTime);
+  const formattedDate = date.toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
     day: "numeric",
   });
 
-  const formattedTime = new Date(dateTime).toLocaleTimeString("en-US", {
+  const formattedTime = date.toLocaleTimeString("en-US", {
     hour: "2-digit",
     minute: "2-digit",
   });
-
 
   return (
     <div className="flex items-center p-4 border rounded-lg shadow-md bg-white">
@@ -47,7 +49,7 @@ const GameInfo: React.FC<GameInfoProps> = ({
         />
       </div>
 
-      {/* event details */}
+      {/* Event Details */}
       <div className="ml-4 flex-1">
         <h2 className="text-xl font-bold">
           {team} vs {opponent}
@@ -59,24 +61,24 @@ const GameInfo: React.FC<GameInfoProps> = ({
           <strong>Venue:</strong> {venue}
         </p>
       </div>
-      {/* odds */}
+      {/* Lowest Ticket Price */}
       <div className="flex-1">
-        <h3 className="text-xl font-bold">
-          $30
-        </h3>
+        <h3 className="text-xl font-bold">{lowestTicketPrice}</h3>
       </div>
-      {/* odds */}
-      <div className="flex-1">
-        <h3 className="text-xl font-bold">
-          ~{winOdds}% to win
-        </h3>
-      </div>
-      {/* injuries*/}
-      <div className=" flex-1">
-        <h3 className="text-xl font-bold">
-          Kevin Durant
-        </h3>
-      </div>
+      {/* Win Odds */}
+      {winOdds !== undefined && (
+        <div className="flex-1">
+          <h3 className="text-xl font-bold">~{winOdds}% to win</h3>
+        </div>
+      )}
+      {/* Injured Players */}
+      {injuredPlayers && injuredPlayers.length > 0 && (
+        <div className="flex-1">
+          <h3 className="text-xl font-bold">
+            {injuredPlayers.join(", ")}
+          </h3>
+        </div>
+      )}
     </div>
   );
 };

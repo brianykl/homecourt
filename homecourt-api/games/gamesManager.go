@@ -71,10 +71,8 @@ func (r *redisGamesManager) CreateOrUpdateGame(ctx context.Context, gameKey stri
 	return nil
 }
 
-func (r *redisGamesManager) GameExists(ctx context.Context, gameID string) (bool, error) {
+func (r *redisGamesManager) GameExists(ctx context.Context, gameKey string) (bool, error) {
 	// Use the game ID to construct the Redis key
-	gameKey := fmt.Sprintf("game:%s", gameID)
-
 	// Check if the key exists in Redis
 	exists, err := r.client.Exists(ctx, gameKey).Result()
 	if err != nil {
