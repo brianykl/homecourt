@@ -35,10 +35,10 @@ func GetHandler(w http.ResponseWriter, r *http.Request) {
 
 	var games []map[string]string
 
-	for _, gameKey := range upcomingGamesKeys {
-		gameData, err := Manager.GetGame(context.Background(), gameKey)
+	for _, gameID := range upcomingGamesKeys {
+		gameData, err := Manager.GetGame(context.Background(), gameID)
 		if err != nil {
-			http.Error(w, fmt.Sprintf("failed to fetch game data for key: %s", gameKey), http.StatusInternalServerError)
+			http.Error(w, fmt.Sprintf("failed to fetch game data for key: %s", gameID), http.StatusInternalServerError)
 			return
 		}
 		games = append(games, gameData)

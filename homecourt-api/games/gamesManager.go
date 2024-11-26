@@ -79,6 +79,19 @@ func (r *redisGamesManager) GameExists(ctx context.Context, gameKey string) (boo
 		return false, fmt.Errorf("failed to check game existence: %v", err)
 	}
 
+	//127.0.0.1:6379> HGETALL "game:DAL NYK 11.28.2024"
+	//  1) "start_time"
+	//  2) "Nov 28, 2024"
+	//  3) "home_team"
+	//  4) "DAL"
+	//  5) "away_team"
+	//  6) "NYK"
+	//  7) "venueName"
+	//  8) "American Airlines Center, Dallas, TX"
+	//  9) "home_team_odds"
+	// 10) "+135"
+	// 11) "lowest_ticket_price"
+	// 12) "$99.00"
 	// Redis EXISTS returns 1 if the key exists, 0 otherwise
 	return exists > 0, nil
 }
@@ -89,7 +102,7 @@ func (r *redisGamesManager) AddUpcomingGame(ctx context.Context, zsetKey, gameID
 		Member: gameID,
 	}).Err()
 	if err != nil {
-		return fmt.Errorf("failed to add game to  home games: %v", err)
+		return fmt.Errorf("failed to add game to home games: %v", err)
 	}
 	return nil
 }

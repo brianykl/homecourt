@@ -114,7 +114,7 @@ func main() {
 		cleanSummary := strings.TrimSpace(strings.TrimPrefix(summary, "🏀"))
 		teams := strings.Split(cleanSummary, "@")
 		if len(teams) != 2 {
-			log.Fatalf("unexpected format: %s", summary)
+			log.Printf("unexpected format: %s", summary)
 			continue
 		}
 
@@ -123,6 +123,10 @@ func main() {
 
 		datetimeLayout := "20060102T150405Z"
 		date, err := time.Parse(datetimeLayout, startTime)
+		if err != nil {
+			log.Printf("failed to parse date %s: %v", date, err)
+			continue
+		}
 		formattedDate := date.Format("01.02.2006")
 		time, err := time.Parse(datetimeLayout, startTime)
 		formattedTime := time.Format("Jan 2, 2006")
@@ -132,7 +136,8 @@ func main() {
 			continue
 		}
 
-		gameKey := fmt.Sprintf("game:%s %s %s", TeamAbbreviation[homeTeam], TeamAbbreviation[awayTeam], formattedDate)
+		gameID := fmt.Sprintf("%s %s %s", TeamAbbreviation[homeTeam], TeamAbbreviation[awayTeam], formattedDate)
+		gameKey := fmt.Sprintf("game:%s", gameID)
 		fields := map[string]interface{}{
 			"home_team":  TeamAbbreviation[homeTeam],
 			"away_team":  TeamAbbreviation[awayTeam],
@@ -145,7 +150,21 @@ func main() {
 			continue
 		}
 		log.Printf("stored game: %s", gameKey)
+
+		upcomingGamesKey := fmt.Sprintf("team:%s:upcoming_home_games", TeamAbbreviation[homeTeam])
+		score := time.Unix()
+		// this might potentially be gameid instead of gamekey....
+		err = redisClient.ZAdd(ctx, upcomingGamesKey, redis.Z{
+			Score:  float64(score),
+			Member: gameID,
+		}).Err()
+		if err != nil {
+			log.Printf("failed to add game to upcoming games list")
+			continue
+		}
+		log.Printf("added game to upcoming games list")
 	}
+
 	// define types for what im storing in redis
 	// parse and store into redis
 	// can consider flushing redis each time we do this

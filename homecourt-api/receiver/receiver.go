@@ -155,7 +155,6 @@ func storeData(ctx context.Context, queue string, data map[string]interface{}) e
 			return fmt.Errorf("could not extract home team & away team out of tickets message: %v", err)
 		}
 
-		venueName := data["venue_name"].(string)
 		date, _ := time.Parse(time.RFC3339, data["start_date_time"].(string))
 		formattedDate := date.Format("01.02.2006")
 		startTime := data["start_date_time"].(string)
@@ -164,11 +163,16 @@ func storeData(ctx context.Context, queue string, data map[string]interface{}) e
 		gameID := fmt.Sprintf("%s %s %s", TeamAbbreviation[homeTeam], TeamAbbreviation[awayTeam], formattedDate)
 		gameKey := fmt.Sprintf("game:%s", gameID)
 
+		exists, err := Manager.GameExists(ctx, gameKey)
+		if err != nil {
+			return fmt.Errorf("error checking game existence: %v", err)
+		}
+		if !exists {
+			log.Printf("Game %s does not exist", gameID)
+			return nil
+		}
+		log.Print(gameKey)
 		fields := map[string]interface{}{
-			"home_team":           TeamAbbreviation[homeTeam],
-			"away_team":           TeamAbbreviation[awayTeam],
-			"venueName":           venueName,
-			"start_time":          startTime,
 			"lowest_ticket_price": lowestTicketPrice,
 		}
 		err = Manager.CreateOrUpdateGame(ctx, gameKey, fields)
@@ -214,7 +218,7 @@ func storeData(ctx context.Context, queue string, data map[string]interface{}) e
 		odds := data["betting_prices"].(map[string]interface{})
 		homeTeamOddsStr, ok := odds[data["home_team"].(string)].(string)
 		if !ok {
-			log.Printf("Odds not found for home team: %s", data["home_team"].(string))
+			log.Printf("odds not found for home team: %s", data["home_team"].(string))
 			return fmt.Errorf("odds not found for home team")
 		}
 
@@ -255,27 +259,32 @@ func storeData(ctx context.Context, queue string, data map[string]interface{}) e
 }
 
 func extractTeams(eventName string) (homeTeam, awayTeam string, err error) {
-	reg := regexp.MustCompile(`[^a-z0-9\s]+`)
+	// Normalize the event name: convert to lowercase and remove special characters
+	reg := regexp.MustCompile(`[^a-z0-9\s]+`) // Keep only alphanumeric and spaces
 	normalizedEvent := reg.ReplaceAllString(strings.ToLower(eventName), "")
 
+	// Split into words for matching
 	words := strings.Fields(normalizedEvent)
 
 	var matchedTeams []string
+
+	// Look for known teams by checking consecutive word combinations
 	for i := 0; i < len(words); i++ {
 		for j := i + 1; j <= len(words); j++ {
-			potentialTeam := strings.Join(words[i:j], " ")
+			potentialTeam := strings.Join(words[i:j], " ") // Join words for potential match
 			if _, exists := TeamAbbreviation[potentialTeam]; exists {
 				matchedTeams = append(matchedTeams, potentialTeam)
-				i = j - 1
+				i = j - 1 // Skip ahead to avoid overlapping matches
 				break
 			}
 		}
 	}
 
 	// Ensure exactly two teams were matched
-	if len(matchedTeams) != 2 {
+	if len(matchedTeams) < 2 {
 		return "", "", fmt.Errorf("could not extract exactly two teams from event: %s", eventName)
 	}
 
+	// Assign matched teams: first team is away, second is home
 	return matchedTeams[0], matchedTeams[1], nil
 }
