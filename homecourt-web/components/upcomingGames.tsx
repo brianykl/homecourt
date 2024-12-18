@@ -1,4 +1,3 @@
-// components/UpcomingGames.tsx
 "use client";
 import React, { useState, useEffect } from "react";
 import GameInfo from "./gameInfo";
@@ -13,6 +12,15 @@ interface Game {
   winOdds?: number; // Optional, as it's not in the API response
   injuredPlayers?: string[]; // Optional, as it's not in the API response
 }
+
+interface GameData {
+  home_team: string; // Abbreviation of the home team
+  away_team: string; // Abbreviation of the away team
+  start_time: string; // ISO string of the game start time
+  venueName: string; // Venue name of the game
+  lowest_ticket_price: string; // Minimum ticket price as a string
+}
+
 
 export default function UpcomingGames({ team }: { team: string }) {
   const teamToLogo: Record<string, string> = {
@@ -82,28 +90,61 @@ export default function UpcomingGames({ team }: { team: string }) {
     WAS: "Washington Wizards",
   };
 
+  const teamNamesToAbbreviations: Record<string, string> = {
+    "Atlanta Hawks": "ATL",
+    "Boston Celtics": "BOS",
+    "Brooklyn Nets": "BKN",
+    "Charlotte Hornets": "CHA",
+    "Chicago Bulls": "CHI",
+    "Cleveland Cavaliers": "CLE",
+    "Dallas Mavericks": "DAL",
+    "Denver Nuggets": "DEN",
+    "Detroit Pistons": "DET",
+    "Golden State Warriors": "GSW",
+    "Houston Rockets": "HOU",
+    "Indiana Pacers": "IND",
+    "LA Clippers": "LAC",
+    "Los Angeles Lakers": "LAL",
+    "Memphis Grizzlies": "MEM",
+    "Miami Heat": "MIA",
+    "Milwaukee Bucks": "MIL",
+    "Minnesota Timberwolves": "MIN",
+    "New Orleans Pelicans": "NOP",
+    "New York Knicks": "NYK",
+    "Oklahoma City Thunder": "OKC",
+    "Orlando Magic": "ORL",
+    "Philadelphia 76ers": "PHI",
+    "Phoenix Suns": "PHX",
+    "Portland Trail Blazers": "POR",
+    "Sacramento Kings": "SAC",
+    "San Antonio Spurs": "SAS",
+    "Toronto Raptors": "TOR",
+    "Utah Jazz": "UTA",
+    "Washington Wizards": "WAS",
+  };
+
   const [games, setGames] = useState<Game[]>([]);
 
   // Function to fetch games data
   const fetchGames = async () => {
     try {
+      console.log(team);
       const response = await fetch("http://localhost:8080/get", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ Team: team }),
+        body: JSON.stringify({ Team: teamNamesToAbbreviations[team] }),
       });
 
       if (!response.ok) {
         throw new Error("Failed to fetch games");
       }
-
       const data = await response.json();
       // data.games is an array of game objects
-
+      console.log(data);
       // Map API data to our Game interface
-      const mappedGames: Game[] = data.games.map((gameData: any) => {
+      const mappedGames: Game[] = data.games.map((gameData: GameData) => {
         const homeTeamAbbr = gameData.home_team;
         const awayTeamAbbr = gameData.away_team;
 
@@ -112,18 +153,15 @@ export default function UpcomingGames({ team }: { team: string }) {
         const awayTeamFullName =
           teamAbbreviations[awayTeamAbbr] || awayTeamAbbr;
 
-        // Determine opponent based on whether the team is home or away
-        const opponent =
-          team === homeTeamAbbr ? awayTeamFullName : homeTeamFullName;
-
         return {
-          opponent: opponent,
+          opponent: awayTeamFullName,
           dateTime: gameData.start_time,
           venue: gameData.venueName,
           lowestTicketPrice: gameData.lowest_ticket_price,
           homeTeam: homeTeamFullName,
           awayTeam: awayTeamFullName,
-          // winOdds and injuredPlayers can be added if available
+          // winOdds: gameData.winOdds
+          // injuredPlayers: gameData.injuredPlayers
         };
       });
 
@@ -134,23 +172,25 @@ export default function UpcomingGames({ team }: { team: string }) {
   };
 
   useEffect(() => {
-    // Fetch games when component mounts
     fetchGames();
 
-    // Set up interval to fetch games every minute
     const interval = setInterval(() => {
       fetchGames();
     }, 60000); // 60000 ms = 1 minute
 
-    // Cleanup interval on component unmount
     return () => clearInterval(interval);
   }, [team]);
 
   return (
-    <div className="flex flex-col justify-center">
+    <div className="flex flex-col justify-end p-4">
+      <div className="flex justify-end items-center gap-4 px-6 font-bold mb-2">
+        <div className="w-32 text-center">min ticket price</div>
+        <div className="w-32 text-center">home team moneyline</div>
+        <div className="w-32 text-center">injury report</div>
+      </div>
       {games.map((game) => {
         const opponentLogo = teamToLogo[game.opponent] || "default-logo.svg";
-
+        const teamLogo = teamToLogo[game.homeTeam] || "default-logo.svg";
         return (
           <GameInfo
             key={`${game.opponent}-${game.dateTime}`}
@@ -159,12 +199,13 @@ export default function UpcomingGames({ team }: { team: string }) {
             dateTime={game.dateTime}
             venue={game.venue}
             opponentLogo={opponentLogo}
+            teamLogo={teamLogo}
             lowestTicketPrice={game.lowestTicketPrice}
-            // winOdds and injuredPlayers can be passed if available
+            winOdds={game.winOdds}
+            injuredPlayers={game.injuredPlayers}
           />
         );
       })}
     </div>
   );
 }
-

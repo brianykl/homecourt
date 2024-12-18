@@ -3,7 +3,6 @@ import BrianProfile from "@/components/brianProfile";
 import Header from "@/components/header";
 import TeamSelector from "@/components/teamSelector";
 import UpcomingGames from "@/components/upcomingGames";
-import Image from "next/image";
 import { useState } from "react";
 
 
@@ -17,7 +16,7 @@ export default function Home() {
         <TeamSelector selectedTeam={ team } setSelectedTeam={ setTeam }/>
       </div>
       <div className="flex flex-col justify-center" id="body">
-        <UpcomingGames team={ team }/>  
+        {team && <UpcomingGames team={team} />}
       </div>
       <div id="footer">
       </div>

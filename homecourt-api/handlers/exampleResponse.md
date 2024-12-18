@@ -1,0 +1,4 @@
+curl -X POST http://localhost:8080/get \
+-H "Content-Type: application/json" \
+-d '{"Team": "DAL"}'
+{"games":[{"away_team":"NYK","home_team":"DAL","home_team_odds":"+135","lowest_ticket_price":"$99.00","start_time":"Nov 28, 2024","venueName":"American Airlines Center, Dallas, TX"},{"away_team":"MEM","home_team":"DAL","lowest_ticket_price":"$35.00","start_time":"Dec 4, 2024","venueName":"American Airlines Center, Dallas, TX"},{"away_team":"LAC","home_team":"DAL","lowest_ticket_price":"$49.00","start_time":"Dec 20, 2024","venueName":"American Airlines Center, Dallas, TX"},{"away_team":"LAC","home_team":"DAL","lowest_ticket_price":"$69.00","start_time":"Dec 22, 2024","venueName":"American Airlines Center, Dallas, TX"},{"away_team":"POR","home_team":"DAL","start_time":"Dec 24, 2024","venueName":"American Airlines Center, Dallas, TX"}]}

@@ -109,9 +109,12 @@ func (r *redisGamesManager) AddUpcomingGame(ctx context.Context, zsetKey, gameID
 
 func (r *redisGamesManager) GetUpcomingGames(ctx context.Context, teamID string, count int64) ([]string, error) {
 	zsetKey := fmt.Sprintf("team:%s:upcoming_home_games", teamID)
-	now := time.Now().Unix()
+	now := time.Now()
+
+	// Subtract 24 hours to get yesterday
+	yesterday := now.Add(-24 * time.Hour).Unix()
 	gameIDs, err := r.client.ZRangeByScore(ctx, zsetKey, &redis.ZRangeBy{
-		Min:    fmt.Sprintf("%d", now),
+		Min:    fmt.Sprintf("%d", yesterday),
 		Max:    "+inf",
 		Offset: 0,
 		Count:  count,

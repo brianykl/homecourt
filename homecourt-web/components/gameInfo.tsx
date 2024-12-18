@@ -9,6 +9,7 @@ interface GameInfoProps {
   dateTime: string;
   venue: string;
   opponentLogo: string;
+  teamLogo: string;
   lowestTicketPrice: string;
   winOdds?: number;
   injuredPlayers?: string[];
@@ -20,6 +21,7 @@ const GameInfo: React.FC<GameInfoProps> = ({
   dateTime,
   venue,
   opponentLogo,
+  teamLogo,
   lowestTicketPrice,
   winOdds,
   injuredPlayers,
@@ -38,9 +40,18 @@ const GameInfo: React.FC<GameInfoProps> = ({
   });
 
   return (
-    <div className="flex items-center p-4 border rounded-lg shadow-md bg-white">
+    <div className="flex items-center border p-2 rounded-lg shadow-md bg-white">
       {/* Opponent Logo */}
-      <div className="flex-shrink-0">
+      <div className="flex-shrink-0 ml-2 mr-1">
+        <Image
+          src={teamLogo}
+          alt={`${team} logo`}
+          width={50}
+          height={50}
+        />
+      </div>
+      vs.
+      <div className="flex-shrink-0 ml-0">
         <Image
           src={opponentLogo}
           alt={`${opponent} logo`}
@@ -48,9 +59,10 @@ const GameInfo: React.FC<GameInfoProps> = ({
           height={50}
         />
       </div>
+      
 
       {/* Event Details */}
-      <div className="ml-4 flex-1">
+      <div className="ml-10 flex-1">
         <h2 className="text-xl font-bold">
           {team} vs {opponent}
         </h2>
@@ -62,20 +74,32 @@ const GameInfo: React.FC<GameInfoProps> = ({
         </p>
       </div>
       {/* Lowest Ticket Price */}
-      <div className="flex-1">
+      <div className="w-32">
         <h3 className="text-xl font-bold">{lowestTicketPrice}</h3>
       </div>
       {/* Win Odds */}
       {winOdds !== undefined && (
-        <div className="flex-1">
+        <div className="w-32">
           <h3 className="text-xl font-bold">~{winOdds}% to win</h3>
+        </div>
+      )}
+      {winOdds == undefined && (
+        <div className="w-32">
+          <h3 className="text-xl font-bold">odds not avail.</h3>
         </div>
       )}
       {/* Injured Players */}
       {injuredPlayers && injuredPlayers.length > 0 && (
-        <div className="flex-1">
+        <div className="w-32">
           <h3 className="text-xl font-bold">
             {injuredPlayers.join(", ")}
+          </h3>
+        </div>
+      )}
+      {(!injuredPlayers || (injuredPlayers && injuredPlayers.length == 0)) && (
+        <div className="w-32">
+          <h3 className="text-xl font-bold">
+            no injuries
           </h3>
         </div>
       )}
