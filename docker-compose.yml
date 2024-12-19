@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  homecourt-api:
+    build:
+      ./homecourt-api
+    ports:
+      - "8080:8080"
+    environment:
+      - REDIS_HOST=redis
+      - RABBITMQ_HOST=rabbitmq
+    depends_on:
+      - redis
+      - rabbitmq
+
+  homecourt-web:
+    build:
+      context: ./homecourt-web
+    ports:
+      - "3000:3000"
+    depends_on:
+      - homecourt-api
+
+  homecourt-init:
+    build:
+      context: ./homecourt-init
+    depends_on:
+      - redis
+      - rabbitmq
+
+  homecourt-stream:
+    build:
+      context: ./homecourt-stream
+    depends_on:
+      - rabbitmq
+
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+
+  rabbitmq:
+    image: rabbitmq:management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
