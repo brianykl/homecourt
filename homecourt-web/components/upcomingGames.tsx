@@ -129,10 +129,9 @@ export default function UpcomingGames({ team }: { team: string }) {
   const fetchGames = async () => {
     try {
       console.log(team);
-      const response = await fetch("http://localhost:8080/get", {
+      const response = await fetch("http://ec2-35-182-39-120.ca-central-1.compute.amazonaws.com:8080/get", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+        headers: { "Content-Type": "application/json",
         },
         body: JSON.stringify({ Team: teamNamesToAbbreviations[team] }),
       });

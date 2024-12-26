@@ -13,8 +13,7 @@ import (
 	"homecourt-api/handlers"
 	"homecourt-api/receiver"
 
-	"github.com/joho/godotenv"
-)
+	)
 
 // enableCORS sets the necessary CORS headers and handles preflight requests.
 func enableCORS(next http.Handler) http.Handler {
@@ -37,11 +36,7 @@ func enableCORS(next http.Handler) http.Handler {
 
 func main() {
 	// Load environment variables from .env.local
-	err := godotenv.Load(".env.local")
-	if err != nil {
-		log.Fatalf("Error loading .env.local: %v", err)
-	}
-
+	
 	// Initialize GamesManager with Redis
 	gamesManager, err := games.NewGamesManager("localhost:6379")
 	if err != nil {
